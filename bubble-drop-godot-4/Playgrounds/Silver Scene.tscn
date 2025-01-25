@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://da7jb5mmkatbg"]
+[gd_scene load_steps=5 format=3 uid="uid://da7jb5mmkatbg"]
 
 [ext_resource type="PackedScene" uid="uid://biapstqd7xc8x" path="res://Player/Player.tscn" id="1_ylme4"]
+[ext_resource type="Script" path="res://Playgrounds/bubble_spawn_location.gd" id="2_5k6uq"]
 [ext_resource type="PackedScene" uid="uid://xxlnmbq73u1f" path="res://BubblePlatform(Wip)/bubble_platform.tscn" id="2_ya5ok"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2pqy2"]
@@ -11,11 +12,12 @@
 
 [node name="BubbleSpawnLocation" type="StaticBody2D" parent="Player2"]
 position = Vector2(0, 200)
+script = ExtResource("2_5k6uq")
 
 [node name="BubbleShape2DVisualPlaceholder" type="CollisionShape2D" parent="Player2/BubbleSpawnLocation"]
 scale = Vector2(8, 8)
 shape = SubResource("CircleShape2D_2pqy2")
-debug_color = Color(0.533333, 0.498039, 0.741176, 0.486275)
+debug_color = Color(1, 0.642834, 0.328557, 1)
 
 [node name="BubblePlatform" parent="." instance=ExtResource("2_ya5ok")]
 

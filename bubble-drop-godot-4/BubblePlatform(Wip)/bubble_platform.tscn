@@ -1,13 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://xxlnmbq73u1f"]
+[gd_scene load_steps=3 format=3 uid="uid://xxlnmbq73u1f"]
 
-[ext_resource type="Script" path="res://BubblePlatform(Wip)/bubble_platform.gd" id="1_wv1ee"]
 [ext_resource type="Texture2D" uid="uid://uqi4gl8b1sqt" path="res://32x32_character_0000_bubble.png" id="2_yynbq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3itay"]
 
 [node name="BubblePlatform" type="AnimatableBody2D"]
 position = Vector2(0, 200)
-script = ExtResource("1_wv1ee")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(7, 7)
