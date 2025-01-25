@@ -6,8 +6,9 @@ extends CharacterBody2D
 var max_speed = 300
 @export var gravity = 350
 @export var jump_force = 300
-@export var acceleration = 5
-@export var deceleration = 3
+@export var acceleration = 6
+@export var deceleration = 5
+@export var threshold = 25
 
 var _isJumping = false
 
@@ -41,6 +42,8 @@ func horizontal_movement(delta):
 		# Decelerate towards 0 when no input
 		velocity.x = lerp(velocity.x, 0.0, deceleration * delta)
 	
+	if abs(velocity.x) < threshold:
+		velocity.x = 0
 	# Ensure the player does not exceed max speed
 	if abs(velocity.x) > max_speed:
 		velocity.x = sign(velocity.x) * max_speed
