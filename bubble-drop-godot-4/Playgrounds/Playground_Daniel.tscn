@@ -1,7 +1,40 @@
-[gd_scene load_steps=2 format=3 uid="uid://bkf7dsu1ij57i"]
+[gd_scene load_steps=4 format=3 uid="uid://bkf7dsu1ij57i"]
 
-[ext_resource type="PackedScene" uid="uid://wtek45h4228a" path="res://Windows/PauseMenu/PauseMenu.tscn" id="1_mn78e"]
+[ext_resource type="Script" path="res://Playgrounds/BlubbleCount.gd" id="1_uv87t"]
+[ext_resource type="Texture2D" uid="uid://cmld6ukpvs4du" path="res://icon.svg" id="2_w7jhi"]
+[ext_resource type="FontFile" uid="uid://nod41fu6od3j" path="res://Themes/Pixellari.ttf" id="3_hw2t3"]
 
 [node name="PlaygroundDaniel" type="Node2D"]
 
-[node name="CanvasLayer" parent="." instance=ExtResource("1_mn78e")]
+[node name="BubbleCounter" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="BubbleCounter"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uv87t")
+
+[node name="BlubbleImage" type="TextureRect" parent="BubbleCounter/Control"]
+layout_mode = 2
+offset_left = 1065.0
+offset_top = 20.0
+offset_right = 1103.0
+offset_bottom = 53.0
+texture = ExtResource("2_w7jhi")
+expand_mode = 1
+
+[node name="Counter" type="Label" parent="BubbleCounter/Control"]
+layout_mode = 0
+offset_left = 1107.0
+offset_top = 21.0
+offset_right = 1148.0
+offset_bottom = 52.0
+theme_override_fonts/font = ExtResource("3_hw2t3")
+theme_override_font_sizes/font_size = 30
+text = "x 0"
+
+[connection signal="BlubbleDownCountUIEvent" from="BubbleCounter/Control" to="BubbleCounter/Control" method="_on_blubble_down_count_ui_event"]
+[connection signal="BlubbleUpCountUIEvent" from="BubbleCounter/Control" to="BubbleCounter/Control" method="_on_blubble_up_count_ui_event"]
