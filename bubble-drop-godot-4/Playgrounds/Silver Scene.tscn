@@ -7,14 +7,23 @@
 
 [node name="SilverScene" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_ylme4")]
+[node name="Player2" parent="." instance=ExtResource("1_ylme4")]
 
-[node name="BubbleSpawnLocation" type="StaticBody2D" parent="Player"]
+[node name="BubbleSpawnLocation" type="StaticBody2D" parent="Player2"]
 position = Vector2(0, 200)
 
-[node name="BubbleShape2DVisualPlaceholder" type="CollisionShape2D" parent="Player/BubbleSpawnLocation"]
-scale = Vector2(10, 10)
+[node name="BubbleShape2DVisualPlaceholder" type="CollisionShape2D" parent="Player2/BubbleSpawnLocation"]
+scale = Vector2(8, 8)
 shape = SubResource("CircleShape2D_2pqy2")
 debug_color = Color(0.533333, 0.498039, 0.741176, 0.486275)
 
 [node name="BubblePlatform" parent="." instance=ExtResource("2_ya5ok")]
+
+[node name="BubblePlatform2" parent="." instance=ExtResource("2_ya5ok")]
+position = Vector2(406, 202)
+
+[node name="BubblePlatform3" parent="." instance=ExtResource("2_ya5ok")]
+position = Vector2(853, 212)
+
+[node name="BubblePlatform4" parent="." instance=ExtResource("2_ya5ok")]
+position = Vector2(1319, 214)
