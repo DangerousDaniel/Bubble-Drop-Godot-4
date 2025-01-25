@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Windows/PauseMenu.gd" id="1_1su1a"]
 [ext_resource type="Texture2D" uid="uid://c3y8fjcwxpbfu" path="res://Windows/PauseMenu/Game Paused.png" id="2_lft62"]
-[ext_resource type="Texture2D" uid="uid://bvxlgs8oy13ws" path="res://Themes/button (1).png" id="3_mlqql"]
+[ext_resource type="Texture2D" uid="uid://dd4jspxygd672" path="res://Themes/button-blue_03.png" id="3_20a1v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kigdn"]
 bg_color = Color(0.380392, 0.431373, 0.964706, 1)
@@ -52,7 +52,7 @@ offset_bottom = 357.0
 [node name="BackToMainMenuButton" type="TextureButton" parent="PauseMenu/Panel/VBoxContainer"]
 custom_minimum_size = Vector2(50, 100.06)
 layout_mode = 2
-texture_normal = ExtResource("3_mlqql")
+texture_normal = ExtResource("3_20a1v")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -74,7 +74,7 @@ text = "Main Menu"
 [node name="BackToGameButton" type="TextureButton" parent="PauseMenu/Panel/VBoxContainer"]
 custom_minimum_size = Vector2(50, 100.06)
 layout_mode = 2
-texture_normal = ExtResource("3_mlqql")
+texture_normal = ExtResource("3_20a1v")
 ignore_texture_size = true
 stretch_mode = 0
 
