@@ -1,7 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://iddb8p51f5i"]
+[gd_scene load_steps=7 format=3 uid="uid://iddb8p51f5i"]
 
 [ext_resource type="Script" path="res://Levels/MainMenu/MainMenu.gd" id="1_5dxi8"]
 [ext_resource type="Texture2D" uid="uid://cie1ksbco4y3u" path="res://Levels/MainMenu/Screen_1_Logo_BG_hex_616ef6.png" id="1_o56rs"]
+[ext_resource type="Texture2D" uid="uid://bvxlgs8oy13ws" path="res://Themes/button (1).png" id="3_prv27"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_358rs"]
+load_path = "res://.godot/imported/button.png-a73e4fdef5ff9f4a0c32d0ace2df2dc6.ctex"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1yxi4"]
+bg_color = Color(0.180695, 0.689006, 0.608157, 1)
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.17244, 0.406391, 0.364729, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+anti_aliasing = false
+
+[sub_resource type="Theme" id="Theme_k2u2y"]
+Button/styles/normal = SubResource("StyleBoxFlat_1yxi4")
 
 [node name="MainMenu" type="Node2D"]
 
@@ -19,6 +35,15 @@ offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5dxi8")
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Menu"]
+layout_mode = 2
+offset_left = -361.5
+offset_top = -94.5
+offset_right = 1558.5
+offset_bottom = 985.5
+texture_normal = SubResource("CompressedTexture2D_358rs")
+stretch_mode = 0
 
 [node name="Backgound" type="ColorRect" parent="CanvasLayer/Menu"]
 layout_mode = 0
@@ -46,25 +71,81 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -184.0
-offset_top = -15.5
-offset_right = 229.0
-offset_bottom = 363.5
+offset_left = -100.0
+offset_top = -61.0
+offset_right = 168.0
+offset_bottom = 295.0
 grow_horizontal = 2
 grow_vertical = 2
+rotation = -6.28319
+theme = SubResource("Theme_k2u2y")
 
-[node name="PlayButton" type="Button" parent="CanvasLayer/Menu/VBoxContainer - MenuList"]
+[node name="PlayButton" type="TextureButton" parent="CanvasLayer/Menu/VBoxContainer - MenuList"]
+custom_minimum_size = Vector2(50, 100.06)
 layout_mode = 2
+texture_normal = ExtResource("3_prv27")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/Menu/VBoxContainer - MenuList/PlayButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = -11.5
+offset_right = 41.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
 text = "Play Game"
 
-[node name="LoadGame" type="Button" parent="CanvasLayer/Menu/VBoxContainer - MenuList"]
+[node name="LoadButton" type="TextureButton" parent="CanvasLayer/Menu/VBoxContainer - MenuList"]
+custom_minimum_size = Vector2(50, 100.06)
 layout_mode = 2
+texture_normal = ExtResource("3_prv27")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/Menu/VBoxContainer - MenuList/LoadButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = -11.5
+offset_right = 41.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
 text = "Load Game"
 
-[node name="QuitButton" type="Button" parent="CanvasLayer/Menu/VBoxContainer - MenuList"]
+[node name="QuitButton" type="TextureButton" parent="CanvasLayer/Menu/VBoxContainer - MenuList"]
+custom_minimum_size = Vector2(50, 100.06)
 layout_mode = 2
+texture_normal = ExtResource("3_prv27")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/Menu/VBoxContainer - MenuList/QuitButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = -11.5
+offset_right = 41.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
 text = "Quit Game"
 
 [connection signal="button_down" from="CanvasLayer/Menu/VBoxContainer - MenuList/PlayButton" to="CanvasLayer/Menu" method="_on_play_button_button_down"]
-[connection signal="button_down" from="CanvasLayer/Menu/VBoxContainer - MenuList/LoadGame" to="CanvasLayer/Menu" method="_on_load_game_button_down"]
+[connection signal="button_down" from="CanvasLayer/Menu/VBoxContainer - MenuList/LoadButton" to="CanvasLayer/Menu" method="_on_load_button_button_down"]
 [connection signal="button_down" from="CanvasLayer/Menu/VBoxContainer - MenuList/QuitButton" to="CanvasLayer/Menu" method="_on_quit_button_button_down"]
