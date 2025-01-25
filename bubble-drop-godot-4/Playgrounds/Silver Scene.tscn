@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://da7jb5mmkatbg"]
 
 [ext_resource type="PackedScene" uid="uid://biapstqd7xc8x" path="res://Player/Player.tscn" id="1_ylme4"]
-[ext_resource type="Script" path="res://Playgrounds/bubble_spawn_location.gd" id="2_5k6uq"]
+[ext_resource type="Script" path="res://BubblePlatform(Wip)/bubble_platform.gd" id="2_bnyn3"]
 [ext_resource type="PackedScene" uid="uid://xxlnmbq73u1f" path="res://BubblePlatform(Wip)/bubble_platform.tscn" id="2_ya5ok"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2pqy2"]
@@ -10,9 +10,11 @@
 
 [node name="Player2" parent="." instance=ExtResource("1_ylme4")]
 
+[node name="BubblePlatformScriptHolder" type="Node2D" parent="Player2"]
+script = ExtResource("2_bnyn3")
+
 [node name="BubbleSpawnLocation" type="StaticBody2D" parent="Player2"]
 position = Vector2(0, 200)
-script = ExtResource("2_5k6uq")
 
 [node name="BubbleShape2DVisualPlaceholder" type="CollisionShape2D" parent="Player2/BubbleSpawnLocation"]
 scale = Vector2(8, 8)
