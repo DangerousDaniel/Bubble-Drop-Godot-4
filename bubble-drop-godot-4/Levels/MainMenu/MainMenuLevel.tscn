@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://iddb8p51f5i"]
+[gd_scene load_steps=3 format=3 uid="uid://iddb8p51f5i"]
 
+[ext_resource type="Script" path="res://Levels/MainMenu/MainMenu.gd" id="1_5dxi8"]
 [ext_resource type="Texture2D" uid="uid://cie1ksbco4y3u" path="res://Levels/MainMenu/Screen_1_Logo_BG_hex_616ef6.png" id="1_o56rs"]
 
 [node name="MainMenu" type="Node2D"]
@@ -17,6 +18,7 @@ offset_right = 6.0
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_5dxi8")
 
 [node name="Backgound" type="ColorRect" parent="CanvasLayer/Menu"]
 layout_mode = 0
@@ -62,3 +64,7 @@ text = "Load Game"
 [node name="QuitButton" type="Button" parent="CanvasLayer/Menu/VBoxContainer - MenuList"]
 layout_mode = 2
 text = "Quit Game"
+
+[connection signal="button_down" from="CanvasLayer/Menu/VBoxContainer - MenuList/PlayButton" to="CanvasLayer/Menu" method="_on_play_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/Menu/VBoxContainer - MenuList/LoadGame" to="CanvasLayer/Menu" method="_on_load_game_button_down"]
+[connection signal="button_down" from="CanvasLayer/Menu/VBoxContainer - MenuList/QuitButton" to="CanvasLayer/Menu" method="_on_quit_button_button_down"]
