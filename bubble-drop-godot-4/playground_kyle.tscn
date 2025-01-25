@@ -3,21 +3,22 @@
 [ext_resource type="PackedScene" uid="uid://biapstqd7xc8x" path="res://Player.tscn" id="1_uadcn"]
 [ext_resource type="Texture2D" uid="uid://cmld6ukpvs4du" path="res://icon.svg" id="2_meuoj"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_82g01"]
-size = Vector2(114.849, 161.149)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6x3vn"]
+size = Vector2(126.159, 105.412)
 
 [node name="Playground_Kyle" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_uadcn")]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(504, 646.5)
-scale = Vector2(9.96094, 0.367188)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(7.02744, -70.5743)
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_82g01")
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D/CollisionShape2D"]
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(707, 589)
+scale = Vector2(12.4922, 0.265625)
 texture = ExtResource("2_meuoj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(717, 588)
+scale = Vector2(12.4922, 0.265625)
+shape = SubResource("RectangleShape2D_6x3vn")
+
+[node name="Player" parent="." instance=ExtResource("1_uadcn")]
+position = Vector2(77, 86)

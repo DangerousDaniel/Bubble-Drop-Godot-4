@@ -6,15 +6,16 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ydef7"]
 size = Vector2(129, 128)
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="Node2D" groups=["playground_kyle"]]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["playground_kyle"]]
 script = ExtResource("1_lmnhc")
-gravity = 200
+gravity = 500
+jump_force = 360
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" groups=["playground_kyle"]]
 texture = ExtResource("2_a36ox")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" groups=["playground_kyle"]]
 position = Vector2(-1.5, 0)
 shape = SubResource("RectangleShape2D_ydef7")

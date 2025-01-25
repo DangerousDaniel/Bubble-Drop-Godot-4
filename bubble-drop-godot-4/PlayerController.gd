@@ -1,27 +1,40 @@
 extends CharacterBody2D
 
-# Movement variables
-@export var speed = 400
-@export var jump_force = 800
-@export var gravity = 1000
+# public variables.
+@export_group("Movement Modifiers")
+@export var move_speed = 300
+@export var gravity = 350
+@export var jump_force = 300
 
-func get_input():
-	# Horizontal direction based on input.
-	var input_direction = 0
-	if Input.is_action_pressed("ui_left"):
-		input_direction -= 1
-	if Input.is_action_pressed("ui_right"):
-		input_direction += 1
-	# Move the character using input.
-	velocity.x = input_direction * speed
-	
-	# If the player is grounded, they can jump.
-	if is_on_floor() and Input.is_action_pressed("ui_up"):
-		velocity.y = -jump_force
-	
+var _isJumping = false
+
 func _physics_process(delta):
+	# Apply gravity if player is airborne
 	if not is_on_floor():
-		# Apply gravity if player is airborne.
+		velocity.x -= gravity * delta
 		velocity.y += gravity * delta
-	get_input()
+	else:
+		velocity.y = 0
+		velocity.x = 0
+		_isJumping = false
+
+	# Handle jump
+	if Input.is_action_just_pressed("ui_up") and !_isJumping:
+		Jump()
+
+	horizontal_movement()
+
+	# Apply physics
 	move_and_slide()
+
+func horizontal_movement():
+	var horizontal_input = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+	velocity.x = horizontal_input * move_speed
+
+	# Flip sprite based on direction
+	if horizontal_input != 0:
+		$Sprite2D.flip_h = horizontal_input < 0
+
+func Jump():
+	velocity.y -= jump_force
+	_isJumping = true
