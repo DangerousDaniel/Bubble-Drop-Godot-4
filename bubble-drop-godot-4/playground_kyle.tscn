@@ -1,21 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://bavmcnpdesb57"]
+[gd_scene load_steps=4 format=3 uid="uid://bol8ly0annj0c"]
 
 [ext_resource type="PackedScene" uid="uid://biapstqd7xc8x" path="res://Player.tscn" id="1_uadcn"]
 [ext_resource type="Texture2D" uid="uid://cmld6ukpvs4du" path="res://icon.svg" id="2_meuoj"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_78ejm"]
-size = Vector2(127.498, 117.106)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82g01"]
+size = Vector2(114.849, 161.149)
 
 [node name="Playground_Kyle" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_uadcn")]
 
-[node name="Sprite_Ground" type="Sprite2D" parent="."]
-position = Vector2(506, 647)
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(504, 646.5)
 scale = Vector2(9.96094, 0.367188)
-texture = ExtResource("2_meuoj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite_Ground"]
-position = Vector2(-0.200775, -1.36169)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(7.02744, -70.5743)
 scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_78ejm")
+shape = SubResource("RectangleShape2D_82g01")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D/CollisionShape2D"]
+texture = ExtResource("2_meuoj")
