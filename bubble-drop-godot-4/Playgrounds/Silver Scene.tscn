@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://da7jb5mmkatbg"]
+
+[ext_resource type="PackedScene" uid="uid://biapstqd7xc8x" path="res://Player/Player.tscn" id="1_ylme4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2pqy2"]
+
+[node name="SilverScene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_ylme4")]
+
+[node name="BubbleSpawnLocation" type="StaticBody2D" parent="Player"]
+position = Vector2(0, 200)
+
+[node name="BubbleShape2D" type="CollisionShape2D" parent="Player/BubbleSpawnLocation"]
+scale = Vector2(10, 10)
+shape = SubResource("CircleShape2D_2pqy2")
+debug_color = Color(0.946656, 6.93083e-06, 0.586778, 0.42)
