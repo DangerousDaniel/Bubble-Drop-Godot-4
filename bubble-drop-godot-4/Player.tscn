@@ -1,18 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://biapstqd7xc8x"]
+[gd_scene load_steps=4 format=3 uid="uid://bjnjujk77pn2c"]
 
-[ext_resource type="Script" path="res://Player/PlayerController.gd" id="1_lmnhc"]
+[ext_resource type="PackedScene" uid="uid://bcreeu3du44r6" path="res://MainCamera.tscn" id="2_00ay6"]
 [ext_resource type="Texture2D" uid="uid://cmld6ukpvs4du" path="res://icon.svg" id="2_a36ox"]
-[ext_resource type="PackedScene" uid="uid://bcreeu3du44r6" path="res://MainCamera.tscn" id="3_hsm2k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ydef7"]
 size = Vector2(129, 128)
 
-[node name="Player2" type="Node2D" groups=["playground_kyle"]]
+[node name="Player" type="Node2D" groups=["playground_kyle"]]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["playground_kyle"]]
-script = ExtResource("1_lmnhc")
-gravity = 500
-jump_force = 360
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" groups=["playground_kyle"]]
 texture = ExtResource("2_a36ox")
@@ -21,4 +17,7 @@ texture = ExtResource("2_a36ox")
 position = Vector2(-1.5, 0)
 shape = SubResource("RectangleShape2D_ydef7")
 
-[node name="Camera2D" parent="CharacterBody2D" instance=ExtResource("3_hsm2k")]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+root_node = NodePath("../..")
+
+[node name="Camera" parent="CharacterBody2D" instance=ExtResource("2_00ay6")]
