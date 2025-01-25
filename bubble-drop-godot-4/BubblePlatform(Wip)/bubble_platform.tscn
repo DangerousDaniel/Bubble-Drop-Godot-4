@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://xxlnmbq73u1f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3itay"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_t5bf2"]
+
+[node name="BubblePlatform" type="AnimatableBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 200)
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_3itay")
+debug_color = Color(0.957526, 0.0774486, 0.482221, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 200)
+scale = Vector2(10, 10)
+texture = SubResource("ImageTexture_t5bf2")
