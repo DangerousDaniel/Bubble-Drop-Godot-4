@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bol8ly0annj0c"]
 
-[ext_resource type="PackedScene" uid="uid://biapstqd7xc8x" path="res://Player/Player.tscn" id="1_uadcn"]
-[ext_resource type="Texture2D" uid="uid://cmld6ukpvs4du" path="res://icon.svg" id="2_meuoj"]
+[ext_resource type="Texture2D" uid="uid://cmld6ukpvs4du" path="res://icon.svg" id="1_7w1cu"]
+[ext_resource type="PackedScene" uid="uid://biapstqd7xc8x" path="res://Player/Player.tscn" id="2_dq7rw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6x3vn"]
 size = Vector2(126.159, 105.412)
@@ -13,12 +13,12 @@ size = Vector2(126.159, 105.412)
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(707, 589)
 scale = Vector2(12.4922, 0.265625)
-texture = ExtResource("2_meuoj")
+texture = ExtResource("1_7w1cu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(717, 588)
 scale = Vector2(12.4922, 0.265625)
 shape = SubResource("RectangleShape2D_6x3vn")
 
-[node name="Player" parent="." instance=ExtResource("1_uadcn")]
+[node name="Player" parent="." instance=ExtResource("2_dq7rw")]
 position = Vector2(77, 86)

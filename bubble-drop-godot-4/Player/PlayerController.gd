@@ -19,7 +19,7 @@ func _physics_process(delta):
 		_isJumping = false
 
 	# Handle jump
-	if Input.is_action_just_pressed("ui_up") and !_isJumping:
+	if Input.is_action_just_pressed("Jump") and !_isJumping:
 		Jump()
 
 	horizontal_movement()
@@ -28,7 +28,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func horizontal_movement():
-	var horizontal_input = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+	var horizontal_input = Input.get_action_strength("MoveRight") - Input.get_action_strength("MoveLeft")
 	velocity.x = horizontal_input * move_speed
 
 	# Flip sprite based on direction
