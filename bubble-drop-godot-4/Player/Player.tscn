@@ -1,15 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://biapstqd7xc8x"]
+[gd_scene load_steps=5 format=3 uid="uid://biapstqd7xc8x"]
 
 [ext_resource type="Script" path="res://Player/PlayerController.gd" id="1_lmnhc"]
 [ext_resource type="Texture2D" uid="uid://cmld6ukpvs4du" path="res://icon.svg" id="2_a36ox"]
+[ext_resource type="PackedScene" uid="uid://bcreeu3du44r6" path="res://Player/MainCamera.tscn" id="3_hsm2k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ydef7"]
 size = Vector2(129, 128)
 
-[node name="Player" type="Node2D" groups=["playground_kyle"]]
+[node name="Player2" type="Node2D" groups=["playground_kyle"]]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["playground_kyle"]]
 script = ExtResource("1_lmnhc")
+move_speed = 300
 gravity = 500
 jump_force = 360
 
@@ -19,3 +21,5 @@ texture = ExtResource("2_a36ox")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" groups=["playground_kyle"]]
 position = Vector2(-1.5, 0)
 shape = SubResource("RectangleShape2D_ydef7")
+
+[node name="Camera2D" parent="CharacterBody2D" instance=ExtResource("3_hsm2k")]

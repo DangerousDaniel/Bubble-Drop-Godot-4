@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://wtek45h4228a"]
+[gd_scene load_steps=6 format=3 uid="uid://wtek45h4228a"]
 
 [ext_resource type="Script" path="res://Windows/PauseMenu.gd" id="1_1su1a"]
 [ext_resource type="Texture2D" uid="uid://c3y8fjcwxpbfu" path="res://Windows/PauseMenu/Game Paused.png" id="2_lft62"]
 [ext_resource type="Texture2D" uid="uid://dd4jspxygd672" path="res://Themes/button-blue_03.png" id="3_20a1v"]
+[ext_resource type="FontFile" uid="uid://nod41fu6od3j" path="res://Themes/Pixellari.ttf" id="4_is3vl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kigdn"]
 bg_color = Color(0.380392, 0.431373, 0.964706, 1)
@@ -69,6 +70,8 @@ offset_right = 41.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_is3vl")
+theme_override_font_sizes/font_size = 35
 text = "Main Menu"
 
 [node name="BackToGameButton" type="TextureButton" parent="PauseMenu/Panel/VBoxContainer"]
@@ -91,7 +94,9 @@ offset_right = 41.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Back To Game"
+theme_override_fonts/font = ExtResource("4_is3vl")
+theme_override_font_sizes/font_size = 40
+text = "Resume"
 
 [connection signal="button_down" from="PauseMenu/Panel/VBoxContainer/BackToMainMenuButton" to="PauseMenu" method="_on_back_to_main_menu_button_button_down"]
 [connection signal="button_down" from="PauseMenu/Panel/VBoxContainer/BackToGameButton" to="PauseMenu" method="_on_back_to_game_button_button_down"]
