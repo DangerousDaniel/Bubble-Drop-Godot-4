@@ -321,7 +321,7 @@ script = ExtResource("1_lh0nm")
 sprite_frames = SubResource("SpriteFrames_wumi1")
 animation = &"walk"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" groups=["playground_kyle"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" groups=["player", "playground_kyle"]]
 position = Vector2(1, 20.8333)
 shape = SubResource("RectangleShape2D_ydef7")
 

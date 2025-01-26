@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://cmld6ukpvs4du" path="res://icon.svg" id="1_7w1cu"]
 [ext_resource type="PackedScene" uid="uid://biapstqd7xc8x" path="res://Player/Player.tscn" id="2_dq7rw"]
-[ext_resource type="PackedScene" uid="uid://bbcc4shhvb0k2" path="res://Hazard.tscn" id="3_yu4f1"]
-[ext_resource type="PackedScene" uid="uid://c6e3ihh4f6fy2" path="res://power_up.tscn" id="4_38l5b"]
+[ext_resource type="PackedScene" path="res://Hazard.tscn" id="3_yu4f1"]
+[ext_resource type="PackedScene" path="res://power_up.tscn" id="4_38l5b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6x3vn"]
 size = Vector2(126.159, 105.412)
