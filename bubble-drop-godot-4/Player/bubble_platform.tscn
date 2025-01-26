@@ -58,7 +58,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ktt0j")
 }],
-"loop": true,
+"loop": false,
 "name": &"Bubble_Pop",
 "speed": 5.0
 }, {
@@ -75,7 +75,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_uib7k")
 }],
-"loop": true,
+"loop": false,
 "name": &"Idle",
 "speed": 5.0
 }]
@@ -97,7 +97,7 @@ script = ExtResource("1_pomux")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.999, 1)
 sprite_frames = SubResource("SpriteFrames_nr3sn")
-animation = &"Bubble_Pop"
+animation = &"Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 2.5)
