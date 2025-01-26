@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://b174bcs8otrxh"]
+[gd_scene load_steps=83 format=3 uid="uid://b174bcs8otrxh"]
 
 [ext_resource type="Texture2D" uid="uid://n8at7x42dtve" path="res://Sprites/Backgrounds/background_0001s_0002_sky1.png" id="1_grqrq"]
 [ext_resource type="Texture2D" uid="uid://dlh6l3n5ked1m" path="res://Sprites/Backgrounds/background_0001s_0000_cloud2.png" id="2_sn163"]
@@ -10,9 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://u6vrig2ay8lp" path="res://Sprites/Sprint_Sheet_Anim_64X64_Final.png" id="8_j7r8p"]
 [ext_resource type="Texture2D" uid="uid://bl1j4ff1lg437" path="res://Sprites/Sprint_Sheet_Anim_64X64_Final-sheetFlipped.png" id="9_hua3q"]
 [ext_resource type="Texture2D" uid="uid://cp4jne088gc3k" path="res://Sprites/Sprint_Sheet_Anim_Jump_Walk_64X64.png" id="10_aqqug"]
-[ext_resource type="PackedScene" path="res://Player/MainCamera.tscn" id="11_njr31"]
 [ext_resource type="Script" path="res://Player/spawnBubble.gd" id="12_l8p17"]
 [ext_resource type="PackedScene" uid="uid://cjm4rsvun7sls" path="res://Hazard.tscn" id="14_aryou"]
+[ext_resource type="PackedScene" uid="uid://d3yuvihroplmr" path="res://victory_flag_root.tscn" id="14_c882i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mbwd7"]
 size = Vector2(18, 14.3333)
@@ -411,43 +411,136 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_d23of"]
+atlas = ExtResource("9_hua3q")
+region = Rect2(320, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v83dp"]
+atlas = ExtResource("9_hua3q")
+region = Rect2(384, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjh4e"]
+atlas = ExtResource("9_hua3q")
+region = Rect2(448, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtlgm"]
+atlas = ExtResource("9_hua3q")
+region = Rect2(512, 256, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6j0h7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d23of")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v83dp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjh4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtlgm")
+}],
+"loop": false,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gjii1"]
+size = Vector2(6.42857, 5.57143)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ft5wb"]
+size = Vector2(20.625, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6vdb"]
+atlas = ExtResource("8_j7r8p")
+region = Rect2(0, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0g4s4"]
+atlas = ExtResource("8_j7r8p")
+region = Rect2(64, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4f6k"]
+atlas = ExtResource("8_j7r8p")
+region = Rect2(128, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cukdy"]
+atlas = ExtResource("8_j7r8p")
+region = Rect2(192, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iyyj0"]
+atlas = ExtResource("8_j7r8p")
+region = Rect2(256, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evw1s"]
+atlas = ExtResource("8_j7r8p")
+region = Rect2(320, 320, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_djnhv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6vdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0g4s4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4f6k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cukdy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iyyj0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evw1s")
+}],
+"loop": false,
+"name": &"Create_Bubble",
+"speed": 2.0
+}]
+
 [node name="Game" type="Node2D"]
 
 [node name="MainBG" type="Sprite2D" parent="."]
-position = Vector2(567.5, 320.5)
+position = Vector2(567.5, 323.5)
 scale = Vector2(9.24219, 5.13281)
 texture = ExtResource("1_grqrq")
 
 [node name="Cloud1" type="Sprite2D" parent="."]
 visibility_layer = 2
-position = Vector2(548.5, 345.5)
+position = Vector2(548.5, 348.5)
 scale = Vector2(9.57031, 4.82031)
 texture = ExtResource("2_sn163")
 
 [node name="Cloud2" type="Sprite2D" parent="."]
 visibility_layer = 4
-position = Vector2(572.5, 323)
+position = Vector2(572.5, 326)
 scale = Vector2(9.24219, 5.21875)
 texture = ExtResource("3_mn7l5")
 
 [node name="FrontClouds" type="Sprite2D" parent="."]
 visibility_layer = 8
-position = Vector2(575.5, 491)
+position = Vector2(575.5, 494)
 scale = Vector2(9.24219, 5)
 texture = ExtResource("4_e7kqt")
 
 [node name="Spikes" type="Sprite2D" parent="."]
 visibility_layer = 16
-position = Vector2(567.5, 488.5)
+position = Vector2(567.5, 491.5)
 scale = Vector2(9.32031, 5.26563)
 texture = ExtResource("5_jjwhq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(572.5, 523.5)
+position = Vector2(572.5, 526.5)
 scale = Vector2(9.24219, 3.92188)
 texture = ExtResource("6_hti51")
 
 [node name="Player" type="Node2D" parent="." groups=["player", "playground_kyle"]]
+position = Vector2(-2, 80)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Player" groups=["playground_kyle"]]
 script = ExtResource("7_6fxhj")
@@ -464,8 +557,6 @@ shape = SubResource("RectangleShape2D_mbwd7")
 sprite_frames = SubResource("SpriteFrames_kn112")
 animation = &"walk"
 
-[node name="Camera2D" parent="Player/CharacterBody2D" instance=ExtResource("11_njr31")]
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/CharacterBody2D"]
 position = Vector2(1, 20.8333)
 shape = SubResource("RectangleShape2D_31gtv")
@@ -475,7 +566,7 @@ debug_color = Color(0.63832, 0.523575, 0.127812, 0.42)
 script = ExtResource("12_l8p17")
 
 [node name="BubblePlatform" type="AnimatableBody2D" parent="."]
-position = Vector2(-5093, -2422)
+position = Vector2(-5093, -2419)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BubblePlatform"]
 scale = Vector2(0.999, 1)
@@ -506,12 +597,77 @@ sprite_frames = SubResource("SpriteFrames_sttsv")
 animation = &"Create_Bubble"
 
 [node name="Hazard2" parent="." instance=ExtResource("14_aryou")]
-position = Vector2(133, 164)
+position = Vector2(133, 167)
 
 [node name="Hazard" parent="." instance=ExtResource("14_aryou")]
-position = Vector2(289, 217)
+position = Vector2(289, 220)
 
 [node name="Hazard3" parent="." instance=ExtResource("14_aryou")]
-position = Vector2(430, 141)
+position = Vector2(430, 144)
+
+[node name="VictoryFlagRoot" parent="." instance=ExtResource("14_c882i")]
+position = Vector2(24, 70)
+
+[node name="BubblePlatform2" type="AnimatableBody2D" parent="."]
+position = Vector2(0, 130)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BubblePlatform2"]
+scale = Vector2(0.999, 1)
+sprite_frames = SubResource("SpriteFrames_6j0h7")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BubblePlatform2"]
+position = Vector2(0.5, 2.5)
+scale = Vector2(7, 7)
+shape = SubResource("RectangleShape2D_gjii1")
+debug_color = Color(0.956863, 0.0784314, 0.482353, 0)
+
+[node name="Area2DRightSideBubble" type="Area2D" parent="BubblePlatform2"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-33, -3)
+scale = Vector2(2.76558, 1.3287)
+
+[node name="RightSideBubbleCollider" type="CollisionShape2D" parent="BubblePlatform2/Area2DRightSideBubble"]
+position = Vector2(12.5, 2)
+shape = SubResource("RectangleShape2D_ft5wb")
+debug_color = Color(0.8, 0.188235, 0.909804, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="BubblePlatform2" groups=["playground_kyle"]]
+position = Vector2(0, -130)
+
+[node name="anim" type="AnimatedSprite2D" parent="BubblePlatform2/Sprite2D"]
+sprite_frames = SubResource("SpriteFrames_djnhv")
+animation = &"Create_Bubble"
+
+[node name="BubblePlatform3" type="AnimatableBody2D" parent="."]
+position = Vector2(264, 309)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BubblePlatform3"]
+scale = Vector2(0.999, 1)
+sprite_frames = SubResource("SpriteFrames_6j0h7")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BubblePlatform3"]
+position = Vector2(0.5, 2.5)
+scale = Vector2(7, 7)
+shape = SubResource("RectangleShape2D_gjii1")
+debug_color = Color(0.956863, 0.0784314, 0.482353, 0)
+
+[node name="Area2DRightSideBubble" type="Area2D" parent="BubblePlatform3"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-33, -3)
+scale = Vector2(2.76558, 1.3287)
+
+[node name="RightSideBubbleCollider" type="CollisionShape2D" parent="BubblePlatform3/Area2DRightSideBubble"]
+position = Vector2(12.5, 2)
+shape = SubResource("RectangleShape2D_ft5wb")
+debug_color = Color(0.8, 0.188235, 0.909804, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="BubblePlatform3" groups=["playground_kyle"]]
+position = Vector2(0, -130)
+
+[node name="anim" type="AnimatedSprite2D" parent="BubblePlatform3/Sprite2D"]
+sprite_frames = SubResource("SpriteFrames_djnhv")
+animation = &"Create_Bubble"
 
 [connection signal="animation_finished" from="Player/CharacterBody2D/Sprite2D/AnimatedSprite2D" to="Player/CharacterBody2D" method="_on_animated_sprite_2d_animation_finished"]
