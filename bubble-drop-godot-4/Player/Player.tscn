@@ -1,13 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://biapstqd7xc8x"]
+[gd_scene load_steps=6 format=3 uid="uid://biapstqd7xc8x"]
 
 [ext_resource type="Script" path="res://Player/PlayerController.gd" id="1_lmnhc"]
 [ext_resource type="Texture2D" uid="uid://cmld6ukpvs4du" path="res://icon.svg" id="2_a36ox"]
 [ext_resource type="PackedScene" uid="uid://bcreeu3du44r6" path="res://Player/MainCamera.tscn" id="3_hsm2k"]
+[ext_resource type="PackedScene" uid="uid://del8gwoxalqu4" path="res://Player/bubble_platform_script_holder.tscn" id="4_0j4te"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ydef7"]
 size = Vector2(129, 128)
 
-[node name="Player2" type="Node2D" groups=["playground_kyle"]]
+[node name="Player" type="Node2D" groups=["playground_kyle"]]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["playground_kyle"]]
 script = ExtResource("1_lmnhc")
@@ -23,3 +24,6 @@ position = Vector2(-1.5, 0)
 shape = SubResource("RectangleShape2D_ydef7")
 
 [node name="Camera2D" parent="CharacterBody2D" instance=ExtResource("3_hsm2k")]
+zoom = Vector2(0.5, 0.5)
+
+[node name="BubblePlatformScriptHolder" parent="CharacterBody2D" instance=ExtResource("4_0j4te")]
