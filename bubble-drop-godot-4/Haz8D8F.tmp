@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://g5bkvkcgwjma"]
+
+[ext_resource type="Script" path="res://HazardScript.gd" id="1_fgd4d"]
+[ext_resource type="Texture2D" uid="uid://bjmrls30nwvo" path="res://Levels/spike_02.png" id="1_o3gfn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h83lc"]
+resource_local_to_scene = true
+radius = 37.1083
+
+[node name="Hazard" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(922, 508)
+scale = Vector2(2.0625, 2.0625)
+texture = ExtResource("1_o3gfn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(921, 504)
+scale = Vector2(1, 1)
+shape = SubResource("CircleShape2D_h83lc")
+script = ExtResource("1_fgd4d")

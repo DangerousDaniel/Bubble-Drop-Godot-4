@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bol8ly0annj0c"]
+[gd_scene load_steps=6 format=3 uid="uid://bol8ly0annj0c"]
 
 [ext_resource type="Texture2D" uid="uid://cmld6ukpvs4du" path="res://icon.svg" id="1_7w1cu"]
 [ext_resource type="PackedScene" uid="uid://biapstqd7xc8x" path="res://Player/Player.tscn" id="2_dq7rw"]
+[ext_resource type="PackedScene" uid="uid://bbcc4shhvb0k2" path="res://Hazard.tscn" id="3_yu4f1"]
+[ext_resource type="PackedScene" uid="uid://c6e3ihh4f6fy2" path="res://power_up.tscn" id="4_38l5b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6x3vn"]
 size = Vector2(126.159, 105.412)
@@ -22,3 +24,9 @@ shape = SubResource("RectangleShape2D_6x3vn")
 
 [node name="Player" parent="." instance=ExtResource("2_dq7rw")]
 position = Vector2(77, 86)
+
+[node name="Hazard" parent="." instance=ExtResource("3_yu4f1")]
+
+[node name="PowerUp" parent="." instance=ExtResource("4_38l5b")]
+position = Vector2(738.994, 456.523)
+scale = Vector2(-0.8, -0.962266)
