@@ -11,7 +11,6 @@ func _ready():
 func _on_body_entered(body):
 	print("Collision")
 	if body is Player:
- 		body.Die()
+		body.Die()
 		
-	elif "bubble" in body.name: 
-		body.Pop() # Replace with function body.
+ # Replace with function body.
