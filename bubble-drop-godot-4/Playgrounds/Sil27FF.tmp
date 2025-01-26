@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cp4jne088gc3k" path="res://Sprites/Sprint_Sheet_Anim_Jump_Walk_64X64.png" id="4_o5xc6"]
 [ext_resource type="PackedScene" path="res://Player/MainCamera.tscn" id="5_1qn74"]
 [ext_resource type="Script" path="res://Player/spawnBubble.gd" id="6_goxu5"]
+[ext_resource type="Script" path="res://Player/BubblePopAnimationTrigger.gd" id="7_p8ukm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ydef7"]
 size = Vector2(18, 14.3333)
@@ -351,10 +352,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3itay"]
 size = Vector2(6.42857, 5.57143)
 
-[sub_resource type="GDScript" id="GDScript_huha8"]
-script/source = "extends Area2D
-"
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rqjii"]
 size = Vector2(20.625, 39)
 
@@ -404,7 +401,7 @@ debug_color = Color(0.956863, 0.0784314, 0.482353, 0)
 [node name="Area2DRightSideBubble" type="Area2D" parent="BubblePlatform"]
 position = Vector2(-33, -3)
 scale = Vector2(2.76558, 1.3287)
-script = SubResource("GDScript_huha8")
+script = ExtResource("7_p8ukm")
 
 [node name="RightSideBubbleCollider" type="CollisionShape2D" parent="BubblePlatform/Area2DRightSideBubble"]
 position = Vector2(12.5, 2)
