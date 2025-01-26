@@ -47,7 +47,6 @@ size = Vector2(20.625, 39)
 
 [node name="BubblePlatform" type="AnimatableBody2D"]
 position = Vector2(0, 200)
-script = ExtResource("1_65c4m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.999, 1)
@@ -61,17 +60,21 @@ shape = SubResource("RectangleShape2D_3itay")
 debug_color = Color(0.956863, 0.0784314, 0.482353, 0)
 
 [node name="Area2DRightSideBubble" type="Area2D" parent="."]
-visible = false
+position = Vector2(-5, -5)
+scale = Vector2(1.64329, 1.2582)
+script = ExtResource("1_65c4m")
 
 [node name="RightSideBubbleCollider" type="CollisionShape2D" parent="Area2DRightSideBubble"]
-position = Vector2(12.5, 2)
+position = Vector2(13.3878, -7.15309)
 shape = SubResource("RectangleShape2D_rqjii")
 debug_color = Color(0.8, 0.188235, 0.909804, 1)
 
 [node name="Area2DLeftSideBubble" type="Area2D" parent="."]
-visible = false
+position = Vector2(1, -5)
+scale = Vector2(1.78074, 1.25971)
+script = ExtResource("1_65c4m")
 
 [node name="LeftSideCollider" type="CollisionShape2D" parent="Area2DLeftSideBubble"]
-position = Vector2(-11.6875, 2.5)
+position = Vector2(-11.7929, -7.14448)
 shape = SubResource("RectangleShape2D_rqjii")
 debug_color = Color(1.92523e-07, 0.601195, 0.68797, 1)
