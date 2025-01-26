@@ -70,7 +70,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_coiuj")
 }],
-"loop": false,
+"loop": true,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -101,7 +101,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"jump",
-"speed": 7.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -122,31 +122,28 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0rn6y")
 }],
-"loop": false,
+"loop": true,
 "name": &"walk",
-"speed": 7.0
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ydef7"]
-size = Vector2(18, 14.3333)
+size = Vector2(18, 16.3333)
 
 [node name="Player" type="Node2D" groups=["playground_kyle"]]
 scale = Vector2(3, 3)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["playground_kyle"]]
 script = ExtResource("1_lmnhc")
-move_speed = 250
-gravity = 600
-jump_delay = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" groups=["playground_kyle"]]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D/Sprite2D"]
 sprite_frames = SubResource("SpriteFrames_wumi1")
-animation = &"walk"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" groups=["playground_kyle"]]
-position = Vector2(1, 20.8333)
+position = Vector2(1, 21.8333)
 shape = SubResource("RectangleShape2D_ydef7")
 
 [node name="Camera2D" parent="CharacterBody2D" instance=ExtResource("3_hsm2k")]
