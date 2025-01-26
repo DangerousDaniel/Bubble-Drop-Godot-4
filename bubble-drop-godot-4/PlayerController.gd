@@ -21,7 +21,6 @@ var is_jump_animation_finished = false
 var fall_gravity = 500
 var normal_gravity = 400
 
-var initial_position = Vector2()
 
 func _physics_process(delta):
 	# Apply gravity
@@ -73,7 +72,7 @@ func _physics_process(delta):
 func _ready():
 	# Connect the animation_finished signal from the AnimatedSprite2D node
 	animated_sprite.connect("animation_finished", Callable(self, "_on_animated_sprite_2d_animation_finished"))
-	var initial_position = global_position  #Gets the position of the player starting the game
+	
 	
 
 
@@ -139,12 +138,11 @@ func Die():
 	current_state = "die" 	 #enters into die state
 	velocity.x = 0.0  #this stops the player for moving
 	velocity.y = 0.0
-	print("Player dies")
+	
 	
 func Respawn(): 
-	print("Time to respawn")
 	current_state = "idle"  #return in the idle animation
-	global_position = initial_position  #respawn the player in the starting position
+	get_tree().reload_current_scene()  #reload the current scene
 
 
 	
