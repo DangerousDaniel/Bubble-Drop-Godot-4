@@ -1,6 +1,6 @@
 [gd_scene load_steps=46 format=3 uid="uid://biapstqd7xc8x"]
 
-[ext_resource type="Script" path="res://Player/PlayerController.gd" id="1_lmnhc"]
+[ext_resource type="Script" path="res://PlayerController.gd" id="1_lh0nm"]
 [ext_resource type="Texture2D" uid="uid://u6vrig2ay8lp" path="res://Sprites/Sprint_Sheet_Anim_64X64_Final.png" id="2_le5w0"]
 [ext_resource type="PackedScene" uid="uid://bcreeu3du44r6" path="res://Player/MainCamera.tscn" id="3_hsm2k"]
 [ext_resource type="Texture2D" uid="uid://bl1j4ff1lg437" path="res://Sprites/Sprint_Sheet_Anim_64X64_Final-sheetFlipped.png" id="3_ijctq"]
@@ -312,9 +312,7 @@ size = Vector2(18, 14.3333)
 scale = Vector2(3, 3)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["playground_kyle"]]
-script = ExtResource("1_lmnhc")
-gravity = 400
-jump_force = 200
+script = ExtResource("1_lh0nm")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" groups=["playground_kyle"]]
 
