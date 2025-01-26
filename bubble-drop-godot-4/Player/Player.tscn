@@ -1,8 +1,8 @@
 [gd_scene load_steps=51 format=3 uid="uid://biapstqd7xc8x"]
 
-[ext_resource type="Script" path="res://Player/PlayerController.gd" id="1_lmnhc"]
+[ext_resource type="Script" path="res://PlayerController.gd" id="1_x626h"]
 [ext_resource type="Texture2D" uid="uid://u6vrig2ay8lp" path="res://Sprites/Sprint_Sheet_Anim_64X64_Final.png" id="2_le5w0"]
-[ext_resource type="PackedScene" path="res://Player/MainCamera.tscn" id="3_hsm2k"]
+[ext_resource type="PackedScene" uid="uid://bcreeu3du44r6" path="res://Player/MainCamera.tscn" id="3_hsm2k"]
 [ext_resource type="Texture2D" uid="uid://bl1j4ff1lg437" path="res://Sprites/Sprint_Sheet_Anim_64X64_Final-sheetFlipped.png" id="3_ijctq"]
 [ext_resource type="Texture2D" uid="uid://cp4jne088gc3k" path="res://Sprites/Sprint_Sheet_Anim_Jump_Walk_64X64.png" id="3_jlu15"]
 
@@ -357,8 +357,9 @@ size = Vector2(18, 14.3333)
 scale = Vector2(3, 3)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["playground_kyle"]]
-script = ExtResource("1_lmnhc")
+script = ExtResource("1_x626h")
 jump_force = 200.0
+normal_gravity = 500.0
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" groups=["playground_kyle"]]
 
