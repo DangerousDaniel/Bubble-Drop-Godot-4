@@ -1,37 +1,77 @@
-[gd_scene load_steps=5 format=3 uid="uid://xxlnmbq73u1f"]
+[gd_scene load_steps=10 format=3 uid="uid://xxlnmbq73u1f"]
 
 [ext_resource type="Script" path="res://BubblePlatform(Wip)/bubble_explosion.gd" id="1_65c4m"]
-[ext_resource type="Texture2D" uid="uid://uqi4gl8b1sqt" path="res://32x32_character_0000_bubble.png" id="2_yynbq"]
+[ext_resource type="Texture2D" uid="uid://bl1j4ff1lg437" path="res://Sprites/Sprint_Sheet_Anim_64X64_Final-sheetFlipped.png" id="2_x8h8r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_562yl"]
+atlas = ExtResource("2_x8h8r")
+region = Rect2(320, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01c0f"]
+atlas = ExtResource("2_x8h8r")
+region = Rect2(384, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bljio"]
+atlas = ExtResource("2_x8h8r")
+region = Rect2(448, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uib7k"]
+atlas = ExtResource("2_x8h8r")
+region = Rect2(512, 256, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d4itp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_562yl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01c0f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bljio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uib7k")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3itay"]
+size = Vector2(6.42857, 5.57143)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rqjii"]
-size = Vector2(86.5, 166)
+size = Vector2(20.625, 39)
 
 [node name="BubblePlatform" type="AnimatableBody2D"]
 position = Vector2(0, 200)
 script = ExtResource("1_65c4m")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.999, 1)
+sprite_frames = SubResource("SpriteFrames_d4itp")
+animation = &"Idle"
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 2.5)
 scale = Vector2(7, 7)
 shape = SubResource("RectangleShape2D_3itay")
 debug_color = Color(0.956863, 0.0784314, 0.482353, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(7.55803, 7.56559)
-texture = ExtResource("2_yynbq")
 
 [node name="Area2DRightSideBubble" type="Area2D" parent="."]
 visible = false
 
 [node name="RightSideBubbleCollider" type="CollisionShape2D" parent="Area2DRightSideBubble"]
-position = Vector2(45, 0)
+position = Vector2(12.5, 2)
 shape = SubResource("RectangleShape2D_rqjii")
 debug_color = Color(0.8, 0.188235, 0.909804, 1)
 
 [node name="Area2DLeftSideBubble" type="Area2D" parent="."]
+visible = false
 
 [node name="LeftSideCollider" type="CollisionShape2D" parent="Area2DLeftSideBubble"]
-position = Vector2(-45, 0)
+position = Vector2(-11.6875, 2.5)
 shape = SubResource("RectangleShape2D_rqjii")
 debug_color = Color(1.92523e-07, 0.601195, 0.68797, 1)

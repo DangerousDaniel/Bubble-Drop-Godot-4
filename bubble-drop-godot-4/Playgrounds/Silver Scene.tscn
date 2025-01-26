@@ -6,6 +6,7 @@
 [node name="SilverScene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ylme4")]
+scale = Vector2(1, 1)
 
 [node name="BubblePlatform" parent="." instance=ExtResource("2_ya5ok")]
 
