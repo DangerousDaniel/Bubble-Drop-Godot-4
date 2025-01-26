@@ -3,19 +3,17 @@
 [ext_resource type="Script" path="res://HazardScript.gd" id="1_fgd4d"]
 [ext_resource type="Texture2D" uid="uid://bjmrls30nwvo" path="res://Levels/spike_02.png" id="1_o3gfn"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_i6dcs"]
-radius = 37.4833
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ydqp"]
+size = Vector2(24, 25)
 
 [node name="Hazard" type="Area2D"]
 script = ExtResource("1_fgd4d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(959, 468)
-shape = SubResource("CircleShape2D_i6dcs")
+shape = SubResource("RectangleShape2D_1ydqp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(955, 468)
-scale = Vector2(2.4375, 2.21875)
+scale = Vector2(1, 0.91)
 texture = ExtResource("1_o3gfn")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

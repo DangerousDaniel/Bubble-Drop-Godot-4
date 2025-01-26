@@ -22,7 +22,7 @@ func _physics_process(delta):
 		#variable = get_global_mouse_position()
 		#$"../../Sprite2D".Vector2 = variable
 		
-		$"../../BubblePlatform/Sprite2D/anim".global_position = get_global_mouse_position()
+		$"../../BubblePlatform/Sprite2D/anim" .global_position = get_global_mouse_position()
 		
 		
 		$"../../BubblePlatform/Sprite2D/anim".play("Create_Bubble")

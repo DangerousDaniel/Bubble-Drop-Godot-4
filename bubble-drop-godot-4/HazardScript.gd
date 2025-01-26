@@ -10,9 +10,8 @@ func _ready():
 
 func _on_body_entered(body):
 	print("Collision")
-	if body is CharacterBody2D:
-		print("Collided with player")
-		body.Die()
+	if body is Player:
+ 		body.Die()
 		
 	elif "bubble" in body.name: 
 		body.Pop() # Replace with function body.
