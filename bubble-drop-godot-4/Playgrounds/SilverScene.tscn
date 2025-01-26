@@ -364,7 +364,7 @@ script = ExtResource("1_0pkhb")
 
 [node name="Area2D" type="Area2D" parent="Player/CharacterBody2D" groups=["player"]]
 
-[node name="CollisionShape2DForDetection" type="CollisionShape2D" parent="Player/CharacterBody2D/Area2D" groups=["playground_kyle"]]
+[node name="CollisionShape2DForDetection" type="CollisionShape2D" parent="Player/CharacterBody2D/Area2D" groups=["player"]]
 position = Vector2(1, 20.8333)
 shape = SubResource("RectangleShape2D_ydef7")
 
@@ -385,16 +385,9 @@ debug_color = Color(0.63832, 0.523575, 0.127812, 0.42)
 script = ExtResource("6_goxu5")
 
 [node name="BubblePlatform" type="AnimatableBody2D" parent="."]
-visible = false
-position = Vector2(0, 62)
+position = Vector2(0, 130)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BubblePlatform"]
-scale = Vector2(0.999, 1)
-sprite_frames = SubResource("SpriteFrames_d4itp")
-animation = &"Idle"
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="BubblePlatform"]
-position = Vector2(-24, 35)
 scale = Vector2(0.999, 1)
 sprite_frames = SubResource("SpriteFrames_d4itp")
 animation = &"Idle"
@@ -406,8 +399,8 @@ shape = SubResource("RectangleShape2D_3itay")
 debug_color = Color(0.956863, 0.0784314, 0.482353, 0)
 
 [node name="Area2DRightSideBubble" type="Area2D" parent="BubblePlatform"]
-position = Vector2(-3, 1)
-scale = Vector2(1.69138, 1.27737)
+position = Vector2(-33, -3)
+scale = Vector2(2.76558, 1.3287)
 script = ExtResource("7_lm1wt")
 
 [node name="RightSideBubbleCollider" type="CollisionShape2D" parent="BubblePlatform/Area2DRightSideBubble"]
@@ -415,16 +408,7 @@ position = Vector2(12.5, 2)
 shape = SubResource("RectangleShape2D_rqjii")
 debug_color = Color(0.8, 0.188235, 0.909804, 1)
 
-[node name="Area2DLeftSideBubble" type="Area2D" parent="BubblePlatform"]
-position = Vector2(3, -4.76837e-07)
-scale = Vector2(1.81642, 1.26681)
-script = ExtResource("7_lm1wt")
-
-[node name="LeftSideCollider" type="CollisionShape2D" parent="BubblePlatform/Area2DLeftSideBubble"]
-position = Vector2(-11.6875, 2.5)
-shape = SubResource("RectangleShape2D_rqjii")
-debug_color = Color(1.92523e-07, 0.601195, 0.68797, 1)
-
+[connection signal="area_entered" from="Player/CharacterBody2D/Area2D" to="BubblePlatform/Area2DRightSideBubble" method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Player/CharacterBody2D/Area2D" to="BubblePlatform/Area2DRightSideBubble" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Player/CharacterBody2D/Area2D" to="BubblePlatform/Area2DLeftSideBubble" method="_on_area_2d_body_entered"]
 [connection signal="animation_finished" from="Player/CharacterBody2D/Sprite2D/AnimatedSprite2D" to="Player/CharacterBody2D" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="BubblePlatform/Area2DRightSideBubble" to="Player/CharacterBody2D" method="_on_area_2d_right_side_bubble_area_entered"]

@@ -60,8 +60,8 @@ shape = SubResource("RectangleShape2D_2haq5")
 debug_color = Color(0.956863, 0.0784314, 0.482353, 0)
 
 [node name="Area2DRightSideBubble" type="Area2D" parent="."]
-position = Vector2(-3, 1)
-scale = Vector2(1.69138, 1.27737)
+position = Vector2(-28, -4)
+scale = Vector2(2.28729, 1.17832)
 script = ExtResource("2_qaeis")
 
 [node name="RightSideBubbleCollider" type="CollisionShape2D" parent="Area2DRightSideBubble"]
@@ -69,12 +69,4 @@ position = Vector2(12.5, 2)
 shape = SubResource("RectangleShape2D_es567")
 debug_color = Color(0.8, 0.188235, 0.909804, 1)
 
-[node name="Area2DLeftSideBubble" type="Area2D" parent="."]
-position = Vector2(3, -4.76837e-07)
-scale = Vector2(1.81642, 1.26681)
-script = ExtResource("2_qaeis")
-
-[node name="LeftSideCollider" type="CollisionShape2D" parent="Area2DLeftSideBubble"]
-position = Vector2(-11.6875, 2.5)
-shape = SubResource("RectangleShape2D_es567")
-debug_color = Color(1.92523e-07, 0.601195, 0.68797, 1)
+[connection signal="area_entered" from="Area2DRightSideBubble" to="Area2DRightSideBubble" method="_on_area_entered"]

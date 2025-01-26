@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 # Public variables
 @export_group("Movement Modifiers")
@@ -121,3 +121,7 @@ func Jump():
 
 func ApplyJumpForce():
 	velocity.y -= jump_force
+
+
+func _on_area_2d_right_side_bubble_area_entered(area: Area2D) -> void:
+	pass # Replace with function body.

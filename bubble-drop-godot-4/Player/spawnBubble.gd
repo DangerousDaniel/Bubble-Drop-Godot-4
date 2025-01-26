@@ -12,6 +12,7 @@ extends Node2D
 
 #File path to the Bubble platform object
 var mynode = preload ("res://Player/bubble_platform.tscn")
+@onready var root = get_node("/root")
 
 # During each update of the game, this checks for if mouse1 is pressed; creates a bubble in that space
 func _physics_process(delta):
@@ -22,4 +23,4 @@ func _physics_process(delta):
 func inst(pos):
 	var instance = mynode.instantiate()
 	instance.position = pos
-	add_child(instance)
+	root.add_child(instance)
