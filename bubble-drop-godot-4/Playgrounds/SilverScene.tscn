@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://da7jb5mmkatbg"]
+[gd_scene load_steps=63 format=3 uid="uid://da7jb5mmkatbg"]
 
 [ext_resource type="Script" path="res://PlayerController.gd" id="1_0pkhb"]
 [ext_resource type="Texture2D" uid="uid://u6vrig2ay8lp" path="res://Sprites/Sprint_Sheet_Anim_64X64_Final.png" id="2_8sqmi"]
@@ -309,6 +309,61 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5oetq"]
+atlas = ExtResource("2_8sqmi")
+region = Rect2(0, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kx3sp"]
+atlas = ExtResource("2_8sqmi")
+region = Rect2(64, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smnr7"]
+atlas = ExtResource("2_8sqmi")
+region = Rect2(128, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8aa0"]
+atlas = ExtResource("2_8sqmi")
+region = Rect2(192, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpbqu"]
+atlas = ExtResource("2_8sqmi")
+region = Rect2(256, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ig0n6"]
+atlas = ExtResource("2_8sqmi")
+region = Rect2(320, 320, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_08oi6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5oetq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kx3sp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smnr7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j8aa0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpbqu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ig0n6")
+}],
+"loop": true,
+"name": &"Create_Bubble",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xwl0x"]
 size = Vector2(18, 14.3333)
 
@@ -376,6 +431,10 @@ shape = SubResource("RectangleShape2D_ydef7")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player/CharacterBody2D/Sprite2D"]
 sprite_frames = SubResource("SpriteFrames_wumi1")
 animation = &"walk"
+
+[node name="anim" type="AnimatedSprite2D" parent="Player/CharacterBody2D/Sprite2D"]
+sprite_frames = SubResource("SpriteFrames_08oi6")
+animation = &"Create_Bubble"
 
 [node name="Camera2D" parent="Player/CharacterBody2D" instance=ExtResource("5_1qn74")]
 

@@ -7,7 +7,6 @@
 	Notes: 
 	Resources:
 """
-
 extends Node2D
 
 #File path to the Bubble platform object
@@ -17,6 +16,7 @@ var mynode = preload ("res://Player/bubble_platform.tscn")
 # During each update of the game, this checks for if mouse1 is pressed; creates a bubble in that space
 func _physics_process(delta):
 	if Input.is_action_just_pressed("CreateBubble"):
+		$"../CharacterBody2D/Sprite2D/anim".play("Create_Bubble")
 		inst(get_global_mouse_position())
 
 # method/function to instantiate bubble object
