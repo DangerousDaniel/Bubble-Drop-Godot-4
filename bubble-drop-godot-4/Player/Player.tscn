@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://biapstqd7xc8x"]
+[gd_scene load_steps=51 format=3 uid="uid://biapstqd7xc8x"]
 
 [ext_resource type="Script" path="res://Player/PlayerController.gd" id="1_lmnhc"]
 [ext_resource type="Texture2D" uid="uid://u6vrig2ay8lp" path="res://Sprites/Sprint_Sheet_Anim_64X64_Final.png" id="2_le5w0"]
@@ -149,6 +149,10 @@ region = Rect2(128, 448, 64, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_i7ibi"]
 atlas = ExtResource("2_le5w0")
 region = Rect2(192, 448, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddem8"]
+atlas = ExtResource("2_le5w0")
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p3oo1"]
 atlas = ExtResource("3_jlu15")
@@ -316,6 +320,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ddem8")
+}],
+"loop": false,
+"name": &"standing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_p3oo1")
 }, {
 "duration": 1.0,
@@ -352,7 +364,7 @@ jump_force = 200.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D/Sprite2D"]
 sprite_frames = SubResource("SpriteFrames_wumi1")
-animation = &"landing_jump"
+animation = &"sleep"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" groups=["playground_kyle"]]
 position = Vector2(1, 20.8333)

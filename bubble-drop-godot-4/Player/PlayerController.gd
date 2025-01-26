@@ -14,14 +14,17 @@ extends CharacterBody2D
 var isJumping : bool = false
 
 @onready var animated_sprite : AnimatedSprite2D = $Sprite2D/AnimatedSprite2D
-var current_state :  = "idle"  # Track the current character state
+var current_state :  = "standing"  # Track the current character state
 var is_jump_animation_finished : bool = false
+var is_waiting_for_idle : bool = false
 
 @export_group("Gravity Modifiers")
 @export var gravity : float = 350
 var isFalling : bool = false
 @export var fall_gravity : float = 500
 @export var normal_gravity : float = 400
+
+
 
 func _physics_process(delta):
 	#Check if player is airborne.
@@ -37,9 +40,10 @@ func _physics_process(delta):
 	else:
 		isFalling = false
 		if (current_state in ["jump", "fall"]):
-			current_state = "idle"
-			animated_sprite.play("idle")
-
+			current_state = "standing"
+			animated_sprite.play("standing")
+	
+		
 	# Handle jump
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		isJumping = true
@@ -53,8 +57,15 @@ func _physics_process(delta):
 
 	# Handle horizontal movement (air control is allowed)
 	var horizontal_input = Input.get_action_strength("MoveRight") - Input.get_action_strength("MoveLeft")
+	
+	if (current_state == "standing" and horizontal_input == 0 and !is_waiting_for_idle):
+		start_idle_timer()
+		
 	handle_horizontal_movement(delta, horizontal_input)
 
+	if (current_state == "idle" and horizontal_input != 0):
+		current_state = "run"
+		animated_sprite.play("walk")
 	if (current_state == "sleep" and horizontal_input != 0):
 		current_state = "idle"
 		animated_sprite.play("idle")
@@ -63,20 +74,23 @@ func _physics_process(delta):
 	if (horizontal_input != 0):
 		$Sprite2D.flip_h = horizontal_input < 0
 		$Sprite2D/AnimatedSprite2D.flip_h = horizontal_input < 0
+		
+
 
 	# Apply physics
 	move_and_slide()
 
 func _ready():
 	# Connect the animation_finished signal from the AnimatedSprite2D node
+	
 	animated_sprite.connect("animation_finished", Callable(self, "_on_animated_sprite_2d_animation_finished"))
 
 func handle_horizontal_movement(delta, horizontal_input):
 	# Handle horizontal movement, allowing for movement during falling/jumping
-	if (current_state in ["idle", "run", "fall", "jump"]):  # Allow movement in all states
+	if (current_state in ["idle", "run", "fall", "jump", "standing"]):  # Allow movement in all states
 		if (horizontal_input != 0):
 			# Accelerate towards max speed
-			var target_speed = float(horizontal_input) * max_speed
+			var target_speed : float = horizontal_input * max_speed
 			velocity.x = lerp(velocity.x, target_speed, acceleration * delta)
 
 			# Only play walk animation if grounded and not jumping
@@ -98,6 +112,7 @@ func handle_horizontal_movement(delta, horizontal_input):
 
 func _on_animated_sprite_2d_animation_finished():
 	# Allow transitions out of dance and sleep states
+	
 	if (current_state == "idle"):
 		current_state = "dance"
 		animated_sprite.play("dance")
@@ -126,3 +141,16 @@ func Jump():
 func ApplyJumpForce():
 	# Add force to jump
 	velocity.y -= jump_force
+	
+func start_idle_timer():
+	is_waiting_for_idle = true
+	current_state = "standing"  # Ensure state is locked during the wait
+	animated_sprite.play("standing")
+	print("Started waiting")
+	await get_tree().create_timer(6).timeout
+	print("Ended waiting")
+	# Ensure no new input occurred during the wait
+	if current_state == "standing" and Input.get_action_strength("MoveRight") == 0 and Input.get_action_strength("MoveLeft") == 0:
+		current_state = "idle"
+		animated_sprite.play("idle")
+	is_waiting_for_idle = false
