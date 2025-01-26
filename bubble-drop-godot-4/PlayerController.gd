@@ -21,11 +21,15 @@ var is_jump_animation_finished = false
 var fall_gravity = 500
 var normal_gravity = 400
 
+var initial_position = Vector2()
+
 func _physics_process(delta):
 	# Apply gravity
 	if not is_on_floor():
 		# Apply falling gravity once the character is falling
-		if velocity.y > 0:
+		if current_state == "die":
+			animated_sprite.play("Death")
+		elif velocity.y > 0:
 			velocity.y += fall_gravity * delta  # Applying fall gravity
 			if current_state != "fall":
 				current_state = "fall"
@@ -38,7 +42,9 @@ func _physics_process(delta):
 				animated_sprite.play("jump")
 	else:
 		# If on the ground, reset the state to idle
-		if current_state in ["jump", "fall"]:
+		if current_state == "die":
+			animated_sprite.play("Death")
+		elif current_state in ["jump", "fall"]:
 			current_state = "idle"
 			animated_sprite.play("idle")
 
@@ -59,13 +65,17 @@ func _physics_process(delta):
 	if horizontal_input != 0:
 		$Sprite2D.flip_h = horizontal_input < 0
 		$Sprite2D/AnimatedSprite2D.flip_h = horizontal_input < 0
-
+		
+  
 	# Apply physics
 	move_and_slide()
 
 func _ready():
 	# Connect the animation_finished signal from the AnimatedSprite2D node
 	animated_sprite.connect("animation_finished", Callable(self, "_on_animated_sprite_2d_animation_finished"))
+	var initial_position = global_position  #Gets the position of the player starting the game
+	
+
 
 func handle_horizontal_movement(delta, horizontal_input):
 	# Handle horizontal movement, allowing for movement during falling/jumping
@@ -113,6 +123,8 @@ func _on_animated_sprite_2d_animation_finished():
 	elif current_state == "fall":
 		current_state = "idle"  # Transition to idle when landing
 		animated_sprite.play("idle")
+	elif current_state == "die":  #Spawn the player in the starting position
+		Respawn()
 
 func Jump():
 	animated_sprite.speed_scale = 0.6
@@ -121,3 +133,21 @@ func Jump():
 
 func ApplyJumpForce():
 	velocity.y -= jump_force
+	
+	
+func Die():
+	current_state = "die" 	 #enters into die state
+	velocity.x = 0.0  #this stops the player for moving
+	velocity.y = 0.0
+	print("Player dies")
+	
+func Respawn(): 
+	print("Time to respawn")
+	current_state = "idle"  #return in the idle animation
+	global_position = initial_position  #respawn the player in the starting position
+
+
+	
+	
+	
+	

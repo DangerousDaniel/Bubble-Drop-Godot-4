@@ -12,7 +12,7 @@ func _on_body_entered(body):
 	print("Collision")
 	if body is CharacterBody2D:
 		print("Collided with player")
-		body.queue_free()
+		body.Die()
 		
 	elif "bubble" in body.name: 
 		body.Pop() # Replace with function body.
