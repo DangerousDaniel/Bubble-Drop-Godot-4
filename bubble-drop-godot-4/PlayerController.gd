@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 # Public variables
 @export_group("Movement Modifiers")
@@ -154,3 +154,7 @@ func start_idle_timer():
 		current_state = "idle"
 		animated_sprite.play("idle")
 	is_waiting_for_idle = false
+
+
+func _on_area_2d_right_side_bubble_area_entered(area: Area2D) -> void:
+	pass # Replace with function body.

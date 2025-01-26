@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbcc4shhvb0k2"]
+[gd_scene load_steps=4 format=3 uid="uid://cjm4rsvun7sls"]
 
 [ext_resource type="Script" path="res://HazardScript.gd" id="1_fgd4d"]
 [ext_resource type="Texture2D" uid="uid://bjmrls30nwvo" path="res://Levels/spike_02.png" id="1_o3gfn"]
