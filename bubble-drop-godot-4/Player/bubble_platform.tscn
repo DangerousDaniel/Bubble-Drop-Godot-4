@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://xxlnmbq73u1f"]
+[gd_scene load_steps=11 format=3 uid="uid://xxlnmbq73u1f"]
 
 [ext_resource type="Texture2D" uid="uid://bl1j4ff1lg437" path="res://Sprites/Sprint_Sheet_Anim_64X64_Final-sheetFlipped.png" id="1_nd5dy"]
+[ext_resource type="Script" path="res://Player/bubble_platform.gd" id="1_pomux"]
 [ext_resource type="Script" path="res://Player/bubble_explosion.gd" id="2_qaeis"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_562yl"]
@@ -47,6 +48,7 @@ size = Vector2(20.625, 39)
 
 [node name="BubblePlatform" type="AnimatableBody2D"]
 position = Vector2(0, 62)
+script = ExtResource("1_pomux")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.999, 1)
