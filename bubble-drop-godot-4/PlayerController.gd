@@ -1,6 +1,17 @@
+"""
+	Project Name: Bubble Drop Godot 4: Prostyle 1
+	Team Name: GGJ 2025 - Bubble Drop Godot 4
+	Authors: Kyle
+	Game Jam Date: January 24 - 26, 2025
+	Description: This is the player controller for the player of the game.
+	Notes: 
+	Resources:
+"""
+
 extends CharacterBody2D
 
 # public variables.
+#region Movements Var
 @export_group("Movement Modifiers")
 @export var move_speed = 150
 var max_speed = 300
@@ -9,6 +20,7 @@ var max_speed = 300
 @export var acceleration = 6
 @export var deceleration = 5
 @export var threshold = 25
+#endregion
 
 var _isJumping = false
 
