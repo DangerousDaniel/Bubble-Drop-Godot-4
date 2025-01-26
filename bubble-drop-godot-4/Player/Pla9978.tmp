@@ -313,14 +313,12 @@ scale = Vector2(3, 3)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["playground_kyle"]]
 script = ExtResource("1_lmnhc")
-gravity = 400
-jump_force = 200
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" groups=["playground_kyle"]]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D/Sprite2D"]
 sprite_frames = SubResource("SpriteFrames_wumi1")
-animation = &"idle"
+animation = &"sleep"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" groups=["playground_kyle"]]
 position = Vector2(1, 20.8333)
