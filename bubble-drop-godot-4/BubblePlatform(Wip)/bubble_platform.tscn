@@ -1,11 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://xxlnmbq73u1f"]
 
-[ext_resource type="Script" path="res://BubblePlatform(Wip)/bubble_platform.gd" id="1_65c4m"]
+[ext_resource type="Script" path="res://BubblePlatform(Wip)/bubble_explosion.gd" id="1_65c4m"]
 [ext_resource type="Texture2D" uid="uid://uqi4gl8b1sqt" path="res://32x32_character_0000_bubble.png" id="2_yynbq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3itay"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fkm5"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rqjii"]
+size = Vector2(86.5, 166)
 
 [node name="BubblePlatform" type="AnimatableBody2D"]
 position = Vector2(0, 200)
@@ -20,9 +21,17 @@ debug_color = Color(0.956863, 0.0784314, 0.482353, 0)
 scale = Vector2(7.55803, 7.56559)
 texture = ExtResource("2_yynbq")
 
-[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
-position = Vector2(100, -122)
-shape = SubResource("RectangleShape2D_5fkm5")
-target_position = Vector2(316, 131)
-collide_with_areas = true
-collide_with_bodies = false
+[node name="Area2DRightSideBubble" type="Area2D" parent="."]
+visible = false
+
+[node name="RightSideBubbleCollider" type="CollisionShape2D" parent="Area2DRightSideBubble"]
+position = Vector2(45, 0)
+shape = SubResource("RectangleShape2D_rqjii")
+debug_color = Color(0.8, 0.188235, 0.909804, 1)
+
+[node name="Area2DLeftSideBubble" type="Area2D" parent="."]
+
+[node name="LeftSideCollider" type="CollisionShape2D" parent="Area2DLeftSideBubble"]
+position = Vector2(-45, 0)
+shape = SubResource("RectangleShape2D_rqjii")
+debug_color = Color(1.92523e-07, 0.601195, 0.68797, 1)
