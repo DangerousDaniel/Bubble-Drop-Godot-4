@@ -11,7 +11,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	var random_rotation = rng.randf_range(-10.0, 10.0)
 	var collision_info = (impulse_force_strength * thrust )
 	if body is CharacterBody2D:
-		var collision_impulse = thrust.rotated(rotation * random_rotation).normalized() * impulse_force_strength
+		var collision_impulse = thrust.rotated(random_rotation).normalized() * impulse_force_strength
 		body.velocity += collision_impulse
 		
 		print("Collided with player")
