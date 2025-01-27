@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d3yuvihroplmr"]
+[gd_scene load_steps=10 format=3 uid="uid://d4a0bkhtnw6p7"]
 
 [ext_resource type="Texture2D" uid="uid://dpv4va2jxpf5k" path="res://Sprites/Sprite_Sheet_Anim_64X64_Flag.png" id="1_levvg"]
 [ext_resource type="Script" path="res://Levels/animated_sprite_2d.gd" id="2_qt8da"]
@@ -54,7 +54,7 @@ animations = [{
 position = Vector2(231, 188)
 sprite_frames = SubResource("SpriteFrames_epbm2")
 animation = &"Flag"
-frame_progress = 0.71792
+frame_progress = 0.869003
 script = ExtResource("2_qt8da")
 
 [node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
@@ -63,3 +63,5 @@ scale = Vector2(14.9732, 4.99395)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
 shape = SubResource("RectangleShape2D_0b4g7")
+
+[connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="AnimatedSprite2D" method="_on_area_2d_body_entered"]

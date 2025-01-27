@@ -1,10 +1,9 @@
-[gd_scene load_steps=63 format=3 uid="uid://da7jb5mmkatbg"]
+[gd_scene load_steps=62 format=3 uid="uid://cst3mw8qwuuct"]
 
 [ext_resource type="Script" path="res://PlayerController.gd" id="1_0pkhb"]
 [ext_resource type="Texture2D" uid="uid://u6vrig2ay8lp" path="res://Sprites/Sprint_Sheet_Anim_64X64_Final.png" id="2_8sqmi"]
 [ext_resource type="Texture2D" uid="uid://bl1j4ff1lg437" path="res://Sprites/Sprint_Sheet_Anim_64X64_Final-sheetFlipped.png" id="3_tmygc"]
 [ext_resource type="Texture2D" uid="uid://cp4jne088gc3k" path="res://Sprites/Sprint_Sheet_Anim_Jump_Walk_64X64.png" id="4_o5xc6"]
-[ext_resource type="PackedScene" uid="uid://bcreeu3du44r6" path="res://Player/MainCamera.tscn" id="5_1qn74"]
 [ext_resource type="Script" path="res://Player/spawnBubble.gd" id="6_goxu5"]
 [ext_resource type="Script" path="res://Player/bubble_platform.gd" id="7_cetit"]
 
@@ -423,8 +422,6 @@ shape = SubResource("RectangleShape2D_ydef7")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player/CharacterBody2D/Sprite2D"]
 sprite_frames = SubResource("SpriteFrames_wumi1")
 animation = &"walk"
-
-[node name="Camera2D" parent="Player/CharacterBody2D" instance=ExtResource("5_1qn74")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/CharacterBody2D"]
 position = Vector2(1, 20.8333)
