@@ -109,7 +109,7 @@ scale = Vector2(12.4922, 0.265625)
 shape = SubResource("RectangleShape2D_g125f")
 
 [node name="Hazard" parent="." instance=ExtResource("9_vhr8p")]
-position = Vector2(3730, 850)
+position = Vector2(3730, 849)
 
 [node name="VictoryFlagRoot" parent="." instance=ExtResource("9_qf6gd")]
 position = Vector2(2693, 3506)
