@@ -158,3 +158,13 @@ func start_idle_timer():
 
 func _on_area_2d_right_side_bubble_area_entered(area: Area2D) -> void:
 	pass # Replace with function body.
+	
+func Die():
+	current_state = "die" 	 #enters into die state
+	velocity.x = 0.0  #this stops the player for moving
+	velocity.y = 0.0
+	Respawn()
+	
+func Respawn(): 
+	current_state = "idle"  #return in the idle animation
+	get_tree().reload_current_scene()  #reload the current scene

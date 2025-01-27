@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b174bcs8otrxh"]
+[gd_scene load_steps=17 format=3 uid="uid://b174bcs8otrxh"]
 
 [ext_resource type="Texture2D" uid="uid://n8at7x42dtve" path="res://Sprites/Backgrounds/background_0001s_0002_sky1.png" id="1_grqrq"]
 [ext_resource type="Texture2D" uid="uid://dlh6l3n5ked1m" path="res://Sprites/Backgrounds/background_0001s_0000_cloud2.png" id="2_sn163"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dt8e4gbflufid" path="res://Player/player_new.tscn" id="7_bygb8"]
 [ext_resource type="Texture2D" uid="uid://bl1j4ff1lg437" path="res://Sprites/Sprint_Sheet_Anim_64X64_Final-sheetFlipped.png" id="8_1caye"]
 [ext_resource type="PackedScene" uid="uid://d4a0bkhtnw6p7" path="res://victory_flag_root.tscn" id="9_qf6gd"]
+[ext_resource type="PackedScene" uid="uid://cjm4rsvun7sls" path="res://Hazard.tscn" id="9_vhr8p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d23of"]
 atlas = ExtResource("8_1caye")
@@ -92,20 +93,23 @@ texture = ExtResource("6_hti51")
 [node name="Player" parent="." instance=ExtResource("7_bygb8")]
 position = Vector2(3475, 624)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="BubblePlatformStartPostion" type="StaticBody2D" parent="."]
 position = Vector2(2, 522)
 scale = Vector2(1.00345, 1.01092)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BubblePlatformStartPostion"]
 position = Vector2(3442.11, 302.695)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_ptj14")
 animation = &"Idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BubblePlatformStartPostion"]
 position = Vector2(3444.61, 300.716)
 scale = Vector2(12.4922, 0.265625)
 shape = SubResource("RectangleShape2D_g125f")
+
+[node name="Hazard" parent="." instance=ExtResource("9_vhr8p")]
+position = Vector2(3730, 850)
 
 [node name="VictoryFlagRoot" parent="." instance=ExtResource("9_qf6gd")]
 position = Vector2(2693, 3506)
