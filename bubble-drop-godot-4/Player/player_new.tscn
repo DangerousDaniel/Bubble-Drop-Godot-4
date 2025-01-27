@@ -1,6 +1,6 @@
 [gd_scene load_steps=50 format=3 uid="uid://dt8e4gbflufid"]
 
-[ext_resource type="Script" path="res://Player/PlayerController.gd" id="1_y30qv"]
+[ext_resource type="Script" path="res://PlayerController.gd" id="1_ue738"]
 [ext_resource type="Texture2D" uid="uid://u6vrig2ay8lp" path="res://Sprites/Sprint_Sheet_Anim_64X64_Final.png" id="2_yn2jx"]
 [ext_resource type="Texture2D" uid="uid://bl1j4ff1lg437" path="res://Sprites/Sprint_Sheet_Anim_64X64_Final-sheetFlipped.png" id="3_ofvv5"]
 [ext_resource type="Texture2D" uid="uid://cp4jne088gc3k" path="res://Sprites/Sprint_Sheet_Anim_Jump_Walk_64X64.png" id="4_lgw41"]
@@ -357,8 +357,7 @@ position = Vector2(77, 86)
 scale = Vector2(3, 3)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["playground_kyle"]]
-script = ExtResource("1_y30qv")
-jump_force = 200.0
+script = ExtResource("1_ue738")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" groups=["playground_kyle"]]
 

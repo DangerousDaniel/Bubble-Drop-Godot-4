@@ -11,8 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://bl1j4ff1lg437" path="res://Sprites/Sprint_Sheet_Anim_64X64_Final-sheetFlipped.png" id="9_hua3q"]
 [ext_resource type="Texture2D" uid="uid://cp4jne088gc3k" path="res://Sprites/Sprint_Sheet_Anim_Jump_Walk_64X64.png" id="10_aqqug"]
 [ext_resource type="Script" path="res://Player/spawnBubble.gd" id="12_l8p17"]
-[ext_resource type="PackedScene" uid="uid://cjm4rsvun7sls" path="res://Hazard.tscn" id="14_aryou"]
-[ext_resource type="PackedScene" uid="uid://d3yuvihroplmr" path="res://victory_flag_root.tscn" id="14_c882i"]
+[ext_resource type="PackedScene" path="res://Hazard.tscn" id="14_aryou"]
+[ext_resource type="PackedScene" path="res://victory_flag_root.tscn" id="14_c882i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mbwd7"]
 size = Vector2(18, 14.3333)
