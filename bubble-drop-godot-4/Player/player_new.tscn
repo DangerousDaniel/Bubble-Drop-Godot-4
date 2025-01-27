@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://ci8h1ocowth4"]
+[gd_scene load_steps=50 format=3 uid="uid://dt8e4gbflufid"]
 
 [ext_resource type="Script" path="res://Player/PlayerController.gd" id="1_y30qv"]
 [ext_resource type="Texture2D" uid="uid://u6vrig2ay8lp" path="res://Sprites/Sprint_Sheet_Anim_64X64_Final.png" id="2_yn2jx"]
