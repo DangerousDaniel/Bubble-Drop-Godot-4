@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://fg2f4j12xlm0"]
+[gd_scene load_steps=4 format=3 uid="uid://2gams67nt0o8"]
 
 [ext_resource type="Texture2D" uid="uid://cmld6ukpvs4du" path="res://icon.svg" id="1_n541y"]
-[ext_resource type="PackedScene" uid="uid://biapstqd7xc8x" path="res://Player/Player.tscn" id="2_dxguc"]
+[ext_resource type="PackedScene" path="res://Player/player_new.tscn" id="2_6ripi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6x3vn"]
 size = Vector2(126.159, 105.412)
@@ -20,4 +20,4 @@ position = Vector2(717, 588)
 scale = Vector2(12.4922, 0.265625)
 shape = SubResource("RectangleShape2D_6x3vn")
 
-[node name="Player" parent="." instance=ExtResource("2_dxguc")]
+[node name="Player" parent="." instance=ExtResource("2_6ripi")]
