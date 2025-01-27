@@ -51,7 +51,8 @@ animations = [{
 [node name="VictoryFlagRoot" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(231, 188)
+position = Vector2(216, -37)
+scale = Vector2(8.03125, 8.03125)
 sprite_frames = SubResource("SpriteFrames_epbm2")
 animation = &"Flag"
 frame_progress = 0.869003
