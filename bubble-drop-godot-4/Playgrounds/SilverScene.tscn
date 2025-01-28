@@ -312,19 +312,19 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xwl0x"]
 size = Vector2(18, 14.3333)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d23of"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fhv5"]
 atlas = ExtResource("3_tmygc")
 region = Rect2(320, 256, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v83dp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_834xr"]
 atlas = ExtResource("3_tmygc")
 region = Rect2(384, 256, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vjh4e"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1o4yf"]
 atlas = ExtResource("3_tmygc")
 region = Rect2(448, 256, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xtlgm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_q80i1"]
 atlas = ExtResource("3_tmygc")
 region = Rect2(512, 256, 64, 64)
 
@@ -332,16 +332,16 @@ region = Rect2(512, 256, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_d23of")
+"texture": SubResource("AtlasTexture_3fhv5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_v83dp")
+"texture": SubResource("AtlasTexture_834xr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vjh4e")
+"texture": SubResource("AtlasTexture_1o4yf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xtlgm")
+"texture": SubResource("AtlasTexture_q80i1")
 }],
 "loop": false,
 "name": &"Idle",
