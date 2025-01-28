@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://b174bcs8otrxh"]
+[gd_scene load_steps=36 format=3 uid="uid://b174bcs8otrxh"]
 
 [ext_resource type="Texture2D" uid="uid://n8at7x42dtve" path="res://Sprites/Backgrounds/background_0001s_0002_sky1.png" id="1_grqrq"]
 [ext_resource type="Texture2D" uid="uid://dlh6l3n5ked1m" path="res://Sprites/Backgrounds/background_0001s_0000_cloud2.png" id="2_sn163"]
@@ -145,6 +145,12 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vigh3"]
+size = Vector2(93, 4452.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_430y0"]
+size = Vector2(6614, 133)
+
 [node name="Game" type="Node2D"]
 
 [node name="Backgound" type="Node2D" parent="."]
@@ -188,6 +194,11 @@ texture = ExtResource("6_hti51")
 [node name="Player" parent="." instance=ExtResource("7_bygb8")]
 position = Vector2(3475, 624)
 
+[node name="BubbleCreationScriptHolder" type="Node2D" parent="."]
+position = Vector2(3513, 517)
+scale = Vector2(3, 3)
+script = ExtResource("8_05evc")
+
 [node name="BubblePlatformStartPostion" type="StaticBody2D" parent="."]
 position = Vector2(2, 522)
 scale = Vector2(1.00345, 1.01092)
@@ -203,19 +214,23 @@ position = Vector2(3444.61, 300.716)
 scale = Vector2(12.4922, 0.265625)
 shape = SubResource("RectangleShape2D_g125f")
 
-[node name="Hazard" parent="." instance=ExtResource("9_vhr8p")]
-position = Vector2(3730, 849)
+[node name="BubblePlatformEndPostion" type="StaticBody2D" parent="."]
+position = Vector2(-497, 3228)
+scale = Vector2(1.00345, 1.01092)
 
-[node name="VictoryFlagRoot" parent="." instance=ExtResource("9_qf6gd")]
-position = Vector2(2693, 3506)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BubblePlatformEndPostion"]
+position = Vector2(3442.11, 302.695)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_ptj14")
+animation = &"Idle"
 
-[node name="BubbleCreationScriptHolder" type="Node2D" parent="."]
-position = Vector2(3475, 624)
-scale = Vector2(3, 3)
-script = ExtResource("8_05evc")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BubblePlatformEndPostion"]
+position = Vector2(3444.61, 300.716)
+scale = Vector2(12.4922, 0.265625)
+shape = SubResource("RectangleShape2D_g125f")
 
 [node name="BubblePlatform" type="AnimatableBody2D" parent="."]
-position = Vector2(0, 130)
+position = Vector2(74, -272)
 script = ExtResource("12_iulqp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BubblePlatform"]
@@ -245,3 +260,84 @@ position = Vector2(0, -130)
 [node name="anim" type="AnimatedSprite2D" parent="BubblePlatform/Sprite2D"]
 sprite_frames = SubResource("SpriteFrames_psj1l")
 animation = &"Create_Bubble"
+
+[node name="Hazrards" type="Node2D" parent="."]
+
+[node name="Hazard" parent="Hazrards" instance=ExtResource("9_vhr8p")]
+position = Vector2(3730, 849)
+rotation = 3.14159
+scale = Vector2(3.29212, 3.29212)
+
+[node name="Hazard2" parent="Hazrards" instance=ExtResource("9_vhr8p")]
+position = Vector2(3554, 1524)
+rotation = 3.14159
+scale = Vector2(3.29212, 3.29212)
+
+[node name="Hazard3" parent="Hazrards" instance=ExtResource("9_vhr8p")]
+position = Vector2(4375, 1176)
+rotation = 3.14159
+scale = Vector2(3.29212, 3.29212)
+
+[node name="Hazard4" parent="Hazrards" instance=ExtResource("9_vhr8p")]
+position = Vector2(3241, 1262)
+rotation = 3.14159
+scale = Vector2(3.29212, 3.29212)
+
+[node name="Hazard5" parent="Hazrards" instance=ExtResource("9_vhr8p")]
+position = Vector2(2435, 1867)
+rotation = 3.14159
+scale = Vector2(3.29212, 3.29212)
+
+[node name="Hazard6" parent="Hazrards" instance=ExtResource("9_vhr8p")]
+position = Vector2(3760, 1892)
+rotation = 3.14159
+scale = Vector2(3.29212, 3.29212)
+
+[node name="Hazard7" parent="Hazrards" instance=ExtResource("9_vhr8p")]
+position = Vector2(3115, 2270)
+rotation = 3.14159
+scale = Vector2(3.29212, 3.29212)
+
+[node name="Hazard8" parent="Hazrards" instance=ExtResource("9_vhr8p")]
+position = Vector2(4052, 2275)
+rotation = 3.14159
+scale = Vector2(3.29212, 3.29212)
+
+[node name="Hazard9" parent="Hazrards" instance=ExtResource("9_vhr8p")]
+position = Vector2(2464, 2638)
+rotation = 3.14159
+scale = Vector2(3.29212, 3.29212)
+
+[node name="Hazard10" parent="Hazrards" instance=ExtResource("9_vhr8p")]
+position = Vector2(3593, 2653)
+rotation = 3.14159
+scale = Vector2(3.29212, 3.29212)
+
+[node name="VictoryFlagRoot" parent="." instance=ExtResource("9_qf6gd")]
+position = Vector2(2707, 3275)
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="WallLeft" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallLeft"]
+position = Vector2(-47, 2226.75)
+shape = SubResource("RectangleShape2D_vigh3")
+
+[node name="WallRight" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallRight"]
+position = Vector2(6461, 2212.75)
+shape = SubResource("RectangleShape2D_vigh3")
+
+[node name="WallTop" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallTop"]
+position = Vector2(3213, -70)
+shape = SubResource("RectangleShape2D_430y0")
+
+[node name="WallBottom" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallBottom"]
+position = Vector2(3213, 4509)
+shape = SubResource("RectangleShape2D_430y0")
