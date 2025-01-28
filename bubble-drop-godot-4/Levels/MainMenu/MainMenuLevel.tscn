@@ -28,10 +28,6 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 6.0
-offset_top = -1.0
-offset_right = 6.0
-offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5dxi8")
@@ -46,9 +42,12 @@ texture_normal = SubResource("CompressedTexture2D_358rs")
 stretch_mode = 0
 
 [node name="Backgound" type="ColorRect" parent="CanvasLayer/Menu"]
-layout_mode = 0
-offset_right = 1140.0
-offset_bottom = 652.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.380392, 0.431373, 0.964706, 1)
 
 [node name="Logo" type="TextureRect" parent="CanvasLayer/Menu"]
@@ -57,9 +56,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -272.0
-offset_top = 2.0
+offset_top = 184.0
 offset_right = 205.0
-offset_bottom = 329.0
+offset_bottom = 511.0
 grow_horizontal = 2
 texture = ExtResource("2_spt4w")
 expand_mode = 2
