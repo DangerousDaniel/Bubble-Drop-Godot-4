@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Bubble Drop Godot 4"
-run/main_scene="res://Levels/MainMenu/MainMenuLevel.tscn"
+run/main_scene="res://Scenes/MainMenuLevel.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -22,7 +22,7 @@ window/size/viewport_height=1080
 
 [gui]
 
-theme/custom_font="res://Themes/Pixellari.ttf"
+theme/custom_font="res://Artwork/Fonts/Pixellari.ttf"
 
 [input]
 

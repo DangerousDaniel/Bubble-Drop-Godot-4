@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=3 uid="uid://bng28a08g6xpp"]
+
+[ext_resource type="Script" path="res://Scripts/UI/UIBlubbleCount.gd" id="1_exvgw"]
+[ext_resource type="Texture2D" uid="uid://ccw7q0ada07qq" path="res://Artwork/Player/Sprint_Sheet_Anim_64X64_Final-sheetFlipped.png" id="2_xjnqu"]
+[ext_resource type="FontFile" uid="uid://nod41fu6od3j" path="res://Artwork/Fonts/Pixellari.ttf" id="3_y202t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d23of"]
+atlas = ExtResource("2_xjnqu")
+region = Rect2(320, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v83dp"]
+atlas = ExtResource("2_xjnqu")
+region = Rect2(384, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjh4e"]
+atlas = ExtResource("2_xjnqu")
+region = Rect2(448, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtlgm"]
+atlas = ExtResource("2_xjnqu")
+region = Rect2(512, 256, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3d48x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d23of")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v83dp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjh4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtlgm")
+}],
+"loop": false,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="BubbleCounter" type="Control"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -13.0
+offset_top = 9.0
+offset_right = -13.0
+offset_bottom = 9.0
+grow_horizontal = 0
+scale = Vector2(1.38568, 1.38568)
+script = ExtResource("1_exvgw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-62.785, 12.2683)
+scale = Vector2(0.70857, 0.694476)
+sprite_frames = SubResource("SpriteFrames_3d48x")
+animation = &"Idle"
+
+[node name="Counter" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.1135
+offset_right = 0.886475
+offset_bottom = 31.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("3_y202t")
+theme_override_font_sizes/font_size = 30
+text = "x 0"

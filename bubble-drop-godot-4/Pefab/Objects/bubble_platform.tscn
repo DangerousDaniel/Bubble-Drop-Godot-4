@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://bj8icuhc8wknu"]
+
+[ext_resource type="Texture2D" uid="uid://doh6gnk3op0c0" path="res://Artwork/Player/Sprint_Sheet_Anim_64X64_Final (1).png" id="1_diet8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aflxs"]
+atlas = ExtResource("1_diet8")
+region = Rect2(0, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idavd"]
+atlas = ExtResource("1_diet8")
+region = Rect2(64, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2p80"]
+atlas = ExtResource("1_diet8")
+region = Rect2(128, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1icu"]
+atlas = ExtResource("1_diet8")
+region = Rect2(192, 256, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ptj14"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aflxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idavd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2p80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1icu")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g125f"]
+size = Vector2(17.9493, 849.082)
+
+[node name="BubblePlatformStartPostion" type="StaticBody2D"]
+scale = Vector2(1.00345, 1.01092)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_ptj14")
+animation = &"Idle"
+frame = 3
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(12.4922, 0.265625)
+shape = SubResource("RectangleShape2D_g125f")
