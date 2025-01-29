@@ -15,18 +15,22 @@ var mynode = preload ("res://Player/bubble_platform.tscn")
 @onready var bubbleplafrom = $"../BubblePlatform/Sprite2D/anim"
 # During each update of the game, this checks for if mouse1 is pressed; creates a bubble in that space
 func _physics_process(delta):
-	if Input.is_action_just_pressed("CreateBubble"):
-		
-		
-		#var variable = $"../../Sprite2D".Vector2(global_position.x, global_position.y) 
-		#variable = get_global_mouse_position()
-		#$"../../Sprite2D".Vector2 = variable
-		
-		bubbleplafrom.global_position = get_global_mouse_position()
-		
-		
-		bubbleplafrom.play("Create_Bubble")
-		inst(get_global_mouse_position())
+	
+	if  $"../BubbleCounter/Control".count <= $"../BubbleCounter/Control".maxCount && $"../BubbleCounter/Control".count != 0:
+		if Input.is_action_just_pressed("CreateBubble"):
+			
+			$"../BubbleCounter/Control".BubbleCountDownUI()
+			
+			#var variable = $"../../Sprite2D".Vector2(global_position.x, global_position.y) 
+			#variable = get_global_mouse_position()
+			#$"../../Sprite2D".Vector2 = variable
+			
+			bubbleplafrom.global_position = get_global_mouse_position()
+			
+			
+			bubbleplafrom.play("Create_Bubble")
+			inst(get_global_mouse_position())
+			
 
 # method/function to instantiate bubble object
 func inst(pos):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://b174bcs8otrxh"]
+[gd_scene load_steps=40 format=3 uid="uid://b174bcs8otrxh"]
 
 [ext_resource type="Texture2D" uid="uid://n8at7x42dtve" path="res://Sprites/Backgrounds/background_0001s_0002_sky1.png" id="1_grqrq"]
 [ext_resource type="Texture2D" uid="uid://dlh6l3n5ked1m" path="res://Sprites/Backgrounds/background_0001s_0000_cloud2.png" id="2_sn163"]
@@ -14,6 +14,8 @@
 [ext_resource type="Script" path="res://Player/bubble_platform.gd" id="12_iulqp"]
 [ext_resource type="Texture2D" uid="uid://u6vrig2ay8lp" path="res://Sprites/Sprint_Sheet_Anim_64X64_Final.png" id="13_4couw"]
 [ext_resource type="PackedScene" uid="uid://wtek45h4228a" path="res://Windows/PauseMenu/PauseMenu.tscn" id="14_8wfco"]
+[ext_resource type="Script" path="res://Player/BlubbleCount.gd" id="14_gvng0"]
+[ext_resource type="FontFile" uid="uid://nod41fu6od3j" path="res://Themes/Pixellari.ttf" id="15_x2j0f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d23of"]
 atlas = ExtResource("8_1caye")
@@ -151,6 +153,26 @@ size = Vector2(93, 4452.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_430y0"]
 size = Vector2(6614, 133)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3d48x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d23of")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v83dp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjh4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtlgm")
+}],
+"loop": false,
+"name": &"Idle",
+"speed": 5.0
+}]
 
 [node name="Game" type="Node2D"]
 
@@ -372,5 +394,39 @@ shape = SubResource("RectangleShape2D_430y0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallBottom"]
 position = Vector2(3213, 4509)
 shape = SubResource("RectangleShape2D_430y0")
+
+[node name="BubbleCounter" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="BubbleCounter"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -13.0
+offset_top = 9.0
+offset_right = -13.0
+offset_bottom = 9.0
+grow_horizontal = 0
+scale = Vector2(1.38568, 1.38568)
+script = ExtResource("14_gvng0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BubbleCounter/Control"]
+position = Vector2(-62.785, 12.2683)
+scale = Vector2(0.70857, 0.694476)
+sprite_frames = SubResource("SpriteFrames_3d48x")
+animation = &"Idle"
+
+[node name="Counter" type="Label" parent="BubbleCounter/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -43.0
+offset_right = -2.0
+offset_bottom = 31.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("15_x2j0f")
+theme_override_font_sizes/font_size = 30
+text = "x 0"
 
 [node name="CanvasLayer" parent="." instance=ExtResource("14_8wfco")]

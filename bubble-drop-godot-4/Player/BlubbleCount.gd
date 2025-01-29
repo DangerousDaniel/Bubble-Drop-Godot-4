@@ -12,31 +12,18 @@ extends Control
 
 #Class Variables
 @export var count : int = 0
-@export var maxCount : int = 3
-
-signal BubbleUpCountUIEvent
-signal BubbleDownCountUIEvent 
+@export var maxCount : int = 10
 
 #GDScript Methods
 func _ready() -> void:
-	pass
+	BubbleCountSetMaxCount()
 	
-func _process(delta: float) -> void:
-	#test code for Counter
-	if Input.is_action_just_pressed("ui_up"):
-		emit_signal("BubbleUpCountUIEvent")
-	if Input.is_action_just_pressed("ui_down"):
-		emit_signal("BubbleDownCountUIEvent")
-
-#Signal Methods
-func _on_bubble_up_count_ui_event() -> void:
-	if count <= maxCount && count != maxCount:
-		count = count + 1
-		$Counter.text = str("x ", count)
-		print(count)
-
-func _on_bubble_down_count_ui_event() -> void:
+func BubbleCountDownUI():
 	if count <= maxCount && count != 0:
 		count = count - 1
-		$Counter.text = str("x ", count)
+		$Counter.text = str(count)
 		print(count)
+
+func BubbleCountSetMaxCount():
+	count = maxCount
+	$Counter.text = str(count)
