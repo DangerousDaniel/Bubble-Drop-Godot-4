@@ -1,13 +1,3 @@
-"""
-	Project Name: Bubble Drop Godot 4: Prostyle 1
-	Team Name: GGJ 2025 - Bubble Drop Godot 4
-	Authors: Daniel
-	Game Jam Date: January 24 - 26, 2025
-	Description: This is the class for the Pause Menu
-	Notes: 
-	Resources:
-"""
-
 extends Control
 
 #Getters and Setters
@@ -35,19 +25,14 @@ func _process(delta: float) -> void:
 			$Panel.show()
 		else:
 			ToggleGamePaused()
-			set_process_input(false) 
-			await get_tree().create_timer(3).timeout
-			set_process_input(true) 
 			$Panel.hide()
 			
 
 #Signal Methods			
 func _on_back_to_main_menu_button_button_down() -> void:
 	ToggleGamePaused()
-	get_tree().change_scene_to_file("res://Levels/MainMenu/MainMenuLevel.tscn")
+	get_tree().change_scene_to_file("res://Scenes/MainMenuLevel.tscn")
 
 func _on_back_to_game_button_button_down() -> void:
-	set_process_input(false) 
-	await get_tree().create_timer(3).timeout
-	set_process_input(true) 
+	ToggleGamePaused()
 	$Panel.hide()

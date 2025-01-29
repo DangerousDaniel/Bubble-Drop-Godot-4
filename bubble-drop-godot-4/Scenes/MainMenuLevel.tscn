@@ -104,6 +104,7 @@ theme_override_font_sizes/font_size = 40
 text = "Play Game"
 
 [node name="LoadButton" type="TextureButton" parent="CanvasLayer/Menu/VBoxContainer - MenuList"]
+visible = false
 custom_minimum_size = Vector2(50, 100.06)
 layout_mode = 2
 texture_normal = ExtResource("3_prv27")

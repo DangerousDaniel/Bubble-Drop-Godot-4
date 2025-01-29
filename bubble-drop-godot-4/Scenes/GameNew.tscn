@@ -596,18 +596,29 @@ position = Vector2(3581, 659)
 [node name="BubblePlatformStartPostion3" parent="." instance=ExtResource("7_y272t")]
 position = Vector2(3128, 658)
 
+[node name="BubblePlatformEndPostion4" parent="." instance=ExtResource("7_y272t")]
+position = Vector2(3040, 3558)
+
+[node name="BubblePlatformEndPostion5" parent="." instance=ExtResource("7_y272t")]
+position = Vector2(3270, 3553)
+
+[node name="BubblePlatformEndPostion6" parent="." instance=ExtResource("7_y272t")]
+position = Vector2(2810, 3558)
+
 [node name="VictoryFlagRoot" parent="." instance=ExtResource("8_ssmr1")]
-position = Vector2(2812, 3517)
+position = Vector2(2792, 3254)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="BubbleCounter" parent="CanvasLayer" instance=ExtResource("11_7wlot")]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_g50gw")]
 
-[node name="GameOverScreen" parent="CanvasLayer" instance=ExtResource("8_u3154")]
-process_mode = 3
-
 [node name="VictoryScreen" parent="CanvasLayer" instance=ExtResource("9_liuuf")]
+offset_top = -209.0
+offset_bottom = -209.0
 
-[node name="BubbleCounter" parent="CanvasLayer" instance=ExtResource("11_7wlot")]
+[node name="GameOverScreen" parent="CanvasLayer" instance=ExtResource("8_u3154")]
 
 [connection signal="animation_finished" from="Player/CharacterBody2D/Sprite2D/AnimatedSprite2D" to="Player/CharacterBody2D" method="_on_animated_sprite_2d_animation_finished"]
