@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4o62wmkdbv01"
-path="res://.godot/imported/Sprint_Sheet_Anim_64X64_Final.png-1fdabe358fa0b3e00e30ad9ff4b4c131.ctex"
+uid="uid://doh6gnk3op0c0"
+path="res://.godot/imported/Sprint_Sheet_Anim_64X64_Final (1).png-946bdf01133909bc59cf858a58e105fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Sprint_Sheet_Anim_64X64_Final.png"
-dest_files=["res://.godot/imported/Sprint_Sheet_Anim_64X64_Final.png-1fdabe358fa0b3e00e30ad9ff4b4c131.ctex"]
+source_file="res://Sprites/Sprint_Sheet_Anim_64X64_Final (1).png"
+dest_files=["res://.godot/imported/Sprint_Sheet_Anim_64X64_Final (1).png-946bdf01133909bc59cf858a58e105fc.ctex"]
 
 [params]
 
