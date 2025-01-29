@@ -81,7 +81,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2haq5"]
-size = Vector2(10.1429, 9.42857)
+size = Vector2(16.5504, 10.138)
 
 [sub_resource type="GDScript" id="GDScript_huha8"]
 script/source = "extends Area2D
@@ -92,6 +92,7 @@ size = Vector2(20.625, 39)
 
 [node name="BubblePlatform" type="AnimatableBody2D"]
 position = Vector2(0, 62)
+scale = Vector2(1.31841, 1.36137)
 script = ExtResource("1_pomux")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -101,8 +102,8 @@ sprite_frames = SubResource("SpriteFrames_nr3sn")
 animation = &"Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-45, -45)
-scale = Vector2(7, 7)
+position = Vector2(-41.9272, -41.9282)
+scale = Vector2(3.6131, 6.18055)
 shape = SubResource("RectangleShape2D_2haq5")
 debug_color = Color(0.956863, 0.0784314, 0.482353, 0)
 

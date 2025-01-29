@@ -230,6 +230,36 @@ position = Vector2(3444.61, 300.716)
 scale = Vector2(12.4922, 0.265625)
 shape = SubResource("RectangleShape2D_g125f")
 
+[node name="BubblePlatformEndPostion2" type="StaticBody2D" parent="."]
+position = Vector2(-729, 3225)
+scale = Vector2(1.00345, 1.01092)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BubblePlatformEndPostion2"]
+position = Vector2(3442.11, 302.695)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_ptj14")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BubblePlatformEndPostion2"]
+position = Vector2(3444.61, 300.716)
+scale = Vector2(12.4922, 0.265625)
+shape = SubResource("RectangleShape2D_g125f")
+
+[node name="BubblePlatformEndPostion3" type="StaticBody2D" parent="."]
+position = Vector2(-270, 3226)
+scale = Vector2(1.00345, 1.01092)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BubblePlatformEndPostion3"]
+position = Vector2(3442.11, 302.695)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_ptj14")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BubblePlatformEndPostion3"]
+position = Vector2(3444.61, 300.716)
+scale = Vector2(12.4922, 0.265625)
+shape = SubResource("RectangleShape2D_g125f")
+
 [node name="BubblePlatform" type="AnimatableBody2D" parent="."]
 position = Vector2(74, -272)
 script = ExtResource("12_iulqp")
