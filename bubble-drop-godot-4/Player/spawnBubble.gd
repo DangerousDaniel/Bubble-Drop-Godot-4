@@ -31,6 +31,10 @@ func _physics_process(delta):
 			bubbleplafrom.play("Create_Bubble")
 			inst(get_global_mouse_position())
 			
+	elif $"../BubbleCounter/Control".count == 0 && $"../VictoryFlagRoot".flag == false:
+		$"../CanvasLayer3/GameOverScreen".ActiveScreen()
+	
+			
 
 # method/function to instantiate bubble object
 func inst(pos):

@@ -375,7 +375,7 @@ script = ExtResource("1_ue738")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D/Sprite2D"]
 sprite_frames = SubResource("SpriteFrames_wumi1")
 animation = &"standing"
-frame_progress = 0.263733
+frame_progress = 0.264546
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" groups=["playground_kyle"]]
 position = Vector2(-2, 18)

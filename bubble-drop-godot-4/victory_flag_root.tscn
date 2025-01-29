@@ -50,6 +50,7 @@ animations = [{
 size = Vector2(6.67654, 14.8096)
 
 [node name="VictoryFlagRoot" type="Node2D"]
+script = ExtResource("2_qt8da")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(216, -37)
@@ -57,7 +58,6 @@ scale = Vector2(8.03125, 8.03125)
 sprite_frames = SubResource("SpriteFrames_epbm2")
 animation = &"Flag"
 frame_progress = 0.869003
-script = ExtResource("2_qt8da")
 
 [node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
 position = Vector2(16, -5)
@@ -68,4 +68,4 @@ position = Vector2(-0.740614, 0.552171)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_0b4g7")
 
-[connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="AnimatedSprite2D" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="." method="_on_area_2d_body_entered"]

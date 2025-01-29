@@ -1,6 +1,7 @@
 [gd_scene load_steps=42 format=3 uid="uid://b174bcs8otrxh"]
 
 [ext_resource type="Texture2D" uid="uid://n8at7x42dtve" path="res://Sprites/Backgrounds/background_0001s_0002_sky1.png" id="1_grqrq"]
+[ext_resource type="Script" path="res://Levels/game.gd" id="1_gs27j"]
 [ext_resource type="Texture2D" uid="uid://dlh6l3n5ked1m" path="res://Sprites/Backgrounds/background_0001s_0000_cloud2.png" id="2_sn163"]
 [ext_resource type="Texture2D" uid="uid://cs4fhttwdatbf" path="res://Sprites/Backgrounds/background_0001s_0001_cloud1.png" id="3_mn7l5"]
 [ext_resource type="Texture2D" uid="uid://bbwgevqrg6hp5" path="res://Sprites/Backgrounds/background_0000s_0002_ground_cloud_bg-_06.png" id="4_e7kqt"]
@@ -17,7 +18,6 @@
 [ext_resource type="Script" path="res://Player/BlubbleCount.gd" id="14_gvng0"]
 [ext_resource type="FontFile" uid="uid://nod41fu6od3j" path="res://Themes/Pixellari.ttf" id="15_x2j0f"]
 [ext_resource type="PackedScene" uid="uid://bc7f1a1qdw1py" path="res://VictoryScreen.tscn" id="17_44gvu"]
-[ext_resource type="PackedScene" uid="uid://c8lkbqxumqsot" path="res://GameOverScreen.tscn" id="18_en8oj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d23of"]
 atlas = ExtResource("8_1caye")
@@ -177,6 +177,7 @@ animations = [{
 }]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_gs27j")
 
 [node name="Backgound" type="Node2D" parent="."]
 position = Vector2(-9, -10)
@@ -433,10 +434,4 @@ text = "x 0"
 
 [node name="CanvasLayer" parent="." instance=ExtResource("14_8wfco")]
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
-
-[node name="VictoryScreen" parent="CanvasLayer2" instance=ExtResource("17_44gvu")]
-
-[node name="CanvasLayer3" type="CanvasLayer" parent="."]
-
-[node name="GameOverScreen" parent="CanvasLayer3" instance=ExtResource("18_en8oj")]
+[node name="VictoryScreen" parent="." instance=ExtResource("17_44gvu")]
