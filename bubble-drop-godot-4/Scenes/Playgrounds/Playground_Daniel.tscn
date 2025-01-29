@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkf7dsu1ij57i"]
+
+[ext_resource type="PackedScene" uid="uid://d0ygtvuya5j8e" path="res://Pefab/UI/bubble_counter.tscn" id="1_h6bou"]
+
+[node name="PlaygroundDaniel" type="Node2D"]
+
+[node name="BubbleCounter" parent="." instance=ExtResource("1_h6bou")]

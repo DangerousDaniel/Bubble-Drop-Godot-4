@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://d4a0bkhtnw6p7"]
+
+[ext_resource type="Texture2D" uid="uid://dpv4va2jxpf5k" path="res://Artwork/Player/Sprite_Sheet_Anim_64X64_Flag.png" id="1_levvg"]
+[ext_resource type="Script" path="res://Scripts/Objects/VictoryFlag.gd" id="2_qt8da"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iuy4v"]
+atlas = ExtResource("1_levvg")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbb6s"]
+atlas = ExtResource("1_levvg")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4dy2"]
+atlas = ExtResource("1_levvg")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85xjw"]
+atlas = ExtResource("1_levvg")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85hhe"]
+atlas = ExtResource("1_levvg")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_epbm2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iuy4v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbb6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4dy2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85xjw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85hhe")
+}],
+"loop": true,
+"name": &"Flag",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0b4g7"]
+size = Vector2(6.67654, 14.8096)
+
+[node name="VictoryFlagRoot" type="Node2D"]
+script = ExtResource("2_qt8da")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(216, -37)
+scale = Vector2(8.03125, 8.03125)
+sprite_frames = SubResource("SpriteFrames_epbm2")
+animation = &"Flag"
+frame_progress = 0.869003
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
+position = Vector2(16, -5)
+scale = Vector2(14.9732, 4.99395)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
+position = Vector2(-0.740614, 0.552171)
+shape = SubResource("RectangleShape2D_0b4g7")
+
+[connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
