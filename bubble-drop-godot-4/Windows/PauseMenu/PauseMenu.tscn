@@ -11,6 +11,7 @@ bg_color = Color(0.380392, 0.431373, 0.964706, 1)
 [node name="CanvasLayer" type="CanvasLayer"]
 
 [node name="PauseMenu" type="Control" parent="."]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5

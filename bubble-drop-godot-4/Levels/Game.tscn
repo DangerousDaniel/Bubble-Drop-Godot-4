@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://b174bcs8otrxh"]
+[gd_scene load_steps=37 format=3 uid="uid://b174bcs8otrxh"]
 
 [ext_resource type="Texture2D" uid="uid://n8at7x42dtve" path="res://Sprites/Backgrounds/background_0001s_0002_sky1.png" id="1_grqrq"]
 [ext_resource type="Texture2D" uid="uid://dlh6l3n5ked1m" path="res://Sprites/Backgrounds/background_0001s_0000_cloud2.png" id="2_sn163"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cjm4rsvun7sls" path="res://Hazard.tscn" id="9_vhr8p"]
 [ext_resource type="Script" path="res://Player/bubble_platform.gd" id="12_iulqp"]
 [ext_resource type="Texture2D" uid="uid://u6vrig2ay8lp" path="res://Sprites/Sprint_Sheet_Anim_64X64_Final.png" id="13_4couw"]
+[ext_resource type="PackedScene" uid="uid://wtek45h4228a" path="res://Windows/PauseMenu/PauseMenu.tscn" id="14_8wfco"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d23of"]
 atlas = ExtResource("8_1caye")
@@ -341,3 +342,5 @@ shape = SubResource("RectangleShape2D_430y0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallBottom"]
 position = Vector2(3213, 4509)
 shape = SubResource("RectangleShape2D_430y0")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("14_8wfco")]
