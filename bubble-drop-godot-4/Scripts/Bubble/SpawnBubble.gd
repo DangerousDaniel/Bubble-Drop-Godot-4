@@ -10,16 +10,16 @@
 extends Node2D
 
 #File path to the Bubble platform object
-var mynode = preload ("res://Player/bubble_platform.tscn")
+var mynode = preload ("res://Pefab/Objects/bubble_controller.tscn")
 @onready var root = get_node("/root")
-@onready var bubbleplafrom = $"../BubblePlatform/Sprite2D/anim"
+@onready var bubbleplafrom = $"../BubbleController/Sprite2D/anim"
 # During each update of the game, this checks for if mouse1 is pressed; creates a bubble in that space
 func _physics_process(delta):
 	
-	if  $"../BubbleCounter/Control".count <= $"../BubbleCounter/Control".maxCount && $"../BubbleCounter/Control".count != 0:
+	if $"../CanvasLayer/BubbleCounter".count <= $"../CanvasLayer/BubbleCounter".maxCount && $"../CanvasLayer/BubbleCounter".count != 0:
 		if Input.is_action_just_pressed("CreateBubble"):
 			
-			$"../BubbleCounter/Control".BubbleCountDownUI()
+			$"../CanvasLayer/BubbleCounter".BubbleCountDownUI()
 			
 			#var variable = $"../../Sprite2D".Vector2(global_position.x, global_position.y) 
 			#variable = get_global_mouse_position()
@@ -28,11 +28,11 @@ func _physics_process(delta):
 			bubbleplafrom.global_position = get_global_mouse_position()
 			
 			
-			bubbleplafrom.play("Create_Bubble")
+			bubbleplafrom.play("create")
 			inst(get_global_mouse_position())
 			
-	elif $"../BubbleCounter/Control".count == 0 && $"../VictoryFlagRoot".flag == false:
-		$"../CanvasLayer3/GameOverScreen".ActiveScreen()
+	elif $"../CanvasLayer/BubbleCounter".count == 0 && $"../VictoryFlagRoot".flag == false:
+		$"../CanvasLayer/GameOverScreen".ActiveScreen()
 	
 			
 

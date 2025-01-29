@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0ygtvuya5j8e"]
+[gd_scene load_steps=9 format=3 uid="uid://bng28a08g6xpp"]
 
 [ext_resource type="Script" path="res://Scripts/UI/UIBlubbleCount.gd" id="1_exvgw"]
 [ext_resource type="Texture2D" uid="uid://ccw7q0ada07qq" path="res://Artwork/Player/Sprint_Sheet_Anim_64X64_Final-sheetFlipped.png" id="2_xjnqu"]
@@ -40,9 +40,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="BubbleCounter" type="CanvasLayer"]
-
-[node name="Control" type="Control" parent="."]
+[node name="BubbleCounter" type="Control"]
 layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
@@ -55,13 +53,13 @@ grow_horizontal = 0
 scale = Vector2(1.38568, 1.38568)
 script = ExtResource("1_exvgw")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-62.785, 12.2683)
 scale = Vector2(0.70857, 0.694476)
 sprite_frames = SubResource("SpriteFrames_3d48x")
 animation = &"Idle"
 
-[node name="Counter" type="Label" parent="Control"]
+[node name="Counter" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0

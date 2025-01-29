@@ -1,38 +1,27 @@
-[gd_scene load_steps=42 format=3 uid="uid://b174bcs8otrxh"]
+[gd_scene load_steps=35 format=3 uid="uid://b174bcs8otrxh"]
 
-[ext_resource type="Texture2D" uid="uid://n8at7x42dtve" path="res://Sprites/Backgrounds/background_0001s_0002_sky1.png" id="1_grqrq"]
-[ext_resource type="Texture2D" uid="uid://dlh6l3n5ked1m" path="res://Sprites/Backgrounds/background_0001s_0000_cloud2.png" id="2_sn163"]
-[ext_resource type="Texture2D" uid="uid://cs4fhttwdatbf" path="res://Sprites/Backgrounds/background_0001s_0001_cloud1.png" id="3_mn7l5"]
-[ext_resource type="Texture2D" uid="uid://bbwgevqrg6hp5" path="res://Sprites/Backgrounds/background_0000s_0002_ground_cloud_bg-_06.png" id="4_e7kqt"]
-[ext_resource type="Texture2D" uid="uid://d2ei4hlo8ri1k" path="res://Sprites/Backgrounds/background_0000s_0001_ground-bg_06.png" id="5_jjwhq"]
-[ext_resource type="Texture2D" uid="uid://cqbrdp7exdqhn" path="res://Sprites/Backgrounds/background_0000s_0000_ground-ul_06.png" id="6_hti51"]
-[ext_resource type="PackedScene" uid="uid://dt8e4gbflufid" path="res://Player/player_new.tscn" id="7_bygb8"]
-[ext_resource type="Texture2D" uid="uid://bl1j4ff1lg437" path="res://Sprites/Sprint_Sheet_Anim_64X64_Final-sheetFlipped.png" id="8_1caye"]
-[ext_resource type="Script" path="res://Player/spawnBubble.gd" id="8_05evc"]
-[ext_resource type="PackedScene" uid="uid://d4a0bkhtnw6p7" path="res://victory_flag_root.tscn" id="9_qf6gd"]
-[ext_resource type="PackedScene" uid="uid://cjm4rsvun7sls" path="res://Hazard.tscn" id="9_vhr8p"]
-[ext_resource type="Script" path="res://Player/bubble_platform.gd" id="12_iulqp"]
-[ext_resource type="Texture2D" uid="uid://u6vrig2ay8lp" path="res://Sprites/Sprint_Sheet_Anim_64X64_Final.png" id="13_4couw"]
-[ext_resource type="PackedScene" uid="uid://wtek45h4228a" path="res://Windows/PauseMenu/PauseMenu.tscn" id="14_8wfco"]
-[ext_resource type="Script" path="res://Player/BlubbleCount.gd" id="14_gvng0"]
-[ext_resource type="FontFile" uid="uid://nod41fu6od3j" path="res://Themes/Pixellari.ttf" id="15_x2j0f"]
-[ext_resource type="PackedScene" uid="uid://bc7f1a1qdw1py" path="res://VictoryScreen.tscn" id="17_44gvu"]
-[ext_resource type="PackedScene" uid="uid://c8lkbqxumqsot" path="res://GameOverScreen.tscn" id="18_en8oj"]
+[ext_resource type="Texture2D" uid="uid://n8at7x42dtve" path="res://Artwork/Backgrounds/background_0001s_0002_sky1.png" id="1_grqrq"]
+[ext_resource type="Texture2D" uid="uid://dlh6l3n5ked1m" path="res://Artwork/Backgrounds/background_0001s_0000_cloud2.png" id="2_sn163"]
+[ext_resource type="Texture2D" uid="uid://cs4fhttwdatbf" path="res://Artwork/Backgrounds/background_0001s_0001_cloud1.png" id="3_mn7l5"]
+[ext_resource type="Texture2D" uid="uid://bbwgevqrg6hp5" path="res://Artwork/Backgrounds/background_0000s_0002_ground_cloud_bg-_06.png" id="4_e7kqt"]
+[ext_resource type="Texture2D" uid="uid://d2ei4hlo8ri1k" path="res://Artwork/Backgrounds/background_0000s_0001_ground-bg_06.png" id="5_jjwhq"]
+[ext_resource type="Texture2D" uid="uid://cqbrdp7exdqhn" path="res://Artwork/Backgrounds/background_0000s_0000_ground-ul_06.png" id="6_hti51"]
+[ext_resource type="PackedScene" uid="uid://d4a0bkhtnw6p7" path="res://Pefab/Objects/victory_flag_root.tscn" id="9_qf6gd"]
+[ext_resource type="PackedScene" uid="uid://cjm4rsvun7sls" path="res://Pefab/Objects/Hazard.tscn" id="9_vhr8p"]
+[ext_resource type="FontFile" uid="uid://nod41fu6od3j" path="res://Artwork/Fonts/Pixellari.ttf" id="15_x2j0f"]
+[ext_resource type="PackedScene" uid="uid://bc7f1a1qdw1py" path="res://Pefab/UI/Menus/VictoryScreen.tscn" id="17_44gvu"]
+[ext_resource type="PackedScene" uid="uid://c8lkbqxumqsot" path="res://Pefab/UI/Menus/GameOverScreen.tscn" id="18_en8oj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d23of"]
-atlas = ExtResource("8_1caye")
 region = Rect2(320, 256, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v83dp"]
-atlas = ExtResource("8_1caye")
 region = Rect2(384, 256, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vjh4e"]
-atlas = ExtResource("8_1caye")
 region = Rect2(448, 256, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xtlgm"]
-atlas = ExtResource("8_1caye")
 region = Rect2(512, 256, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ptj14"]
@@ -59,19 +48,15 @@ animations = [{
 size = Vector2(17.9493, 849.082)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3fhv5"]
-atlas = ExtResource("8_1caye")
 region = Rect2(320, 256, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_834xr"]
-atlas = ExtResource("8_1caye")
 region = Rect2(384, 256, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1o4yf"]
-atlas = ExtResource("8_1caye")
 region = Rect2(448, 256, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q80i1"]
-atlas = ExtResource("8_1caye")
 region = Rect2(512, 256, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cm60s"]
@@ -101,27 +86,21 @@ size = Vector2(6.42857, 5.57143)
 size = Vector2(20.625, 39)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g6vdb"]
-atlas = ExtResource("13_4couw")
 region = Rect2(0, 320, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0g4s4"]
-atlas = ExtResource("13_4couw")
 region = Rect2(64, 320, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v4f6k"]
-atlas = ExtResource("13_4couw")
 region = Rect2(128, 320, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cukdy"]
-atlas = ExtResource("13_4couw")
 region = Rect2(192, 320, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iyyj0"]
-atlas = ExtResource("13_4couw")
 region = Rect2(256, 320, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_evw1s"]
-atlas = ExtResource("13_4couw")
 region = Rect2(320, 320, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_psj1l"]
@@ -216,13 +195,9 @@ position = Vector2(591.66, 540.747)
 scale = Vector2(9.24219, 3.92188)
 texture = ExtResource("6_hti51")
 
-[node name="Player" parent="." instance=ExtResource("7_bygb8")]
-position = Vector2(3475, 624)
-
 [node name="BubbleCreationScriptHolder" type="Node2D" parent="."]
 position = Vector2(3513, 517)
 scale = Vector2(3, 3)
-script = ExtResource("8_05evc")
 
 [node name="BubblePlatformStartPostion" type="StaticBody2D" parent="."]
 position = Vector2(2, 522)
@@ -286,7 +261,6 @@ shape = SubResource("RectangleShape2D_g125f")
 
 [node name="BubblePlatform" type="AnimatableBody2D" parent="."]
 position = Vector2(74, -272)
-script = ExtResource("12_iulqp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BubblePlatform"]
 scale = Vector2(0.999, 1)
@@ -410,7 +384,6 @@ offset_right = -13.0
 offset_bottom = 9.0
 grow_horizontal = 0
 scale = Vector2(1.38568, 1.38568)
-script = ExtResource("14_gvng0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BubbleCounter/Control"]
 position = Vector2(-62.785, 12.2683)
@@ -430,8 +403,6 @@ grow_horizontal = 0
 theme_override_fonts/font = ExtResource("15_x2j0f")
 theme_override_font_sizes/font_size = 30
 text = "x 0"
-
-[node name="CanvasLayer" parent="." instance=ExtResource("14_8wfco")]
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
